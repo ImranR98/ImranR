@@ -1,0 +1,20 @@
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1em">
+    <mat-card fxFlex="20%" fxLayout="column">
+        <mat-card-header>
+            <mat-card-title>Toronto&nbsp;<img src='../../assets/ca.svg' style='width:12pt;'>
+            </mat-card-title>
+            <mat-card-subtitle>Organized and motivated frontend developer seeking to work closely with a team of
+                experienced engineers to craft a product that has an impact (not my words, temporary).
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions fxLayout="column" fxLayout.lt-md="row">
+            <button mat-button color="primary" routerLink="/home/experience">Experience</button>
+            <button mat-button color="primary" routerLink="/home/education">Education</button>
+            <button mat-button color="primary" routerLink="/home/skills">Skills</button>
+            <button mat-button color="primary" routerLink="/home/contact">Contact</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card fxFlex="80%" fxLayout="column">
+        <router-outlet></router-outlet>
+    </mat-card>
+</div>

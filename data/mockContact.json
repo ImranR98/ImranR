@@ -1,0 +1,34 @@
+{
+    "name": "Name",
+    "email": "email@email.com",
+    "phones": [
+        {
+            "type": "main",
+            "countryCode": "1",
+            "number": "1234567890"
+        },
+        {
+            "type": "CC Intentionally not valid",
+            "countryCode": true,
+            "number": "1234567890"
+        },
+        {
+            "type": "work",
+            "countryCode": "255",
+            "number": "0987654321"
+        }
+    ],
+    "links": [
+        {
+            "name": "LinkedOut",
+            "url": "https://google.ca/"
+        },
+        {
+            "url": "Link Intentionally Missing"
+        },
+        {
+            "name": "LinkedInside",
+            "url": "https://google.tz/"
+        }
+    ]
+}
