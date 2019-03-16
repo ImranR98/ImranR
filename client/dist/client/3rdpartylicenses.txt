@@ -114,7 +114,11 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/core
+
 @angular/material/icon
+
+@angular/material/list
 
 @angular/material/progress-bar
 

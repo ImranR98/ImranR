@@ -5,9 +5,13 @@
     </mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    <p>Content comes here.</p>
+  <mat-card class="internal-card">
+  <mat-card-content fxLayout="column" fxLayoutGap="1em">
+      <mat-list dense>
+        <li *ngFor="let entry of skills.entries">{{entry.skill}}</li>
+      </mat-list>
   </mat-card-content>
+</mat-card>
 </div>
 
 <ng-template #loadingScreen>

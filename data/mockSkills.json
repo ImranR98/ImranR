@@ -1,8 +1,0 @@
-[
-    { "skill": "Skill1" },
-    { "skill": "Skill2" },
-    { "skill": "Skill3" },
-    { "skill": 4 },
-    { "skill": false },
-    { "skillzzz": "Skill6" }
-]

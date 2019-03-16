@@ -33,7 +33,7 @@ app.use(allowCrossDomain);
 //======================================
 
 app.get("/getExperience", (req, res) => {
-    dataService.loadCareer('./data/mockExperience.json').then((experience) => {
+    dataService.loadCareer('./data/experience.json').then((experience) => {
         res.status(200).send(experience);
     }).catch((err) => {
         res.status(500).send(err);
@@ -41,7 +41,7 @@ app.get("/getExperience", (req, res) => {
 })
 
 app.get("/getEducation", (req, res) => {
-    dataService.loadCareer('./data/mockEducation.json').then((education) => {
+    dataService.loadCareer('./data/education.json').then((education) => {
         res.status(200).send(education);
     }).catch((err) => {
         res.status(500).send(err);
@@ -49,7 +49,7 @@ app.get("/getEducation", (req, res) => {
 })
 
 app.get("/getSkills", (req, res) => {
-    dataService.loadSkills('./data/mockSkills.json').then((skills) => {
+    dataService.loadSkills('./data/skills.json').then((skills) => {
         res.status(200).send(skills);
     }).catch((err) => {
         res.status(500).send(err);
@@ -57,7 +57,7 @@ app.get("/getSkills", (req, res) => {
 })
 
 app.get("/getContact", (req, res) => {
-    dataService.loadContact('./data/mockContact.json').then((contact) => {
+    dataService.loadContact('./data/contact.json').then((contact) => {
         res.status(200).send(contact);
     }).catch((err) => {
         res.status(500).send(err);

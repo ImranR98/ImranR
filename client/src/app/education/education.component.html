@@ -5,9 +5,26 @@
     </mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    <p>Content comes here.</p>
-  </mat-card-content>
+  <mat-card-content fxLayout="column" fxLayoutGap="1em">
+      <mat-card *ngFor="let entry of education.entries;" class="internal-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{entry.place}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{entry.startDate}}</p>
+          <p *ngIf="!entry.isCurrent">{{entry.endDate}}</p>
+          <p>{{entry.description.descriptionText}}</p>
+          <div *ngFor="let pointSet of entry.description.descriptionPointSets">
+            <p>{{pointSet.pointSetTitle}}</p>
+            <mat-list dense>
+              <li *ngFor="let point of pointSet.points">{{point}}</li>
+            </mat-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
 </div>
 
 <ng-template #loadingScreen>
