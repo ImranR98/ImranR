@@ -23,15 +23,15 @@ export class AppService {
   }
 
   getEducation() {
-    return this.http.get(environment.apiUrl + '/getEducationz') as Observable<CareerAPI>;
+    return this.http.get(environment.apiUrl + '/getEducation') as Observable<CareerAPI>;
   }
 
   getSkills() {
-    return this.http.get(environment.apiUrl + '/getSkillsz') as Observable<SkillsAPI>;
+    return this.http.get(environment.apiUrl + '/getSkills') as Observable<SkillsAPI>;
   }
 
   getContact() {
-    return this.http.get(environment.apiUrl + '/getContactz') as Observable<ContactAPI>;
+    return this.http.get(environment.apiUrl + '/getContact') as Observable<ContactAPI>;
   }
 }
 
