@@ -3,7 +3,7 @@
 
     <mat-card-header>
       <mat-card-title fxLayoutAlign="center">
-        <mat-icon>work_outline</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education
+        <mat-icon>work_outline</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience
       </mat-card-title>
     </mat-card-header>
 
@@ -12,16 +12,17 @@
       <mat-card-content class="entry">
 
         <mat-card-title>
-          {{entry.place}}
+          {{entry.title}}<small> - {{entry.place}}</small>
         </mat-card-title>
+        
 
-        <mat-card-subtitle>{{entry.title}}</mat-card-subtitle>
+        <mat-card-subtitle>From {{entry.startDate}} to <span *ngIf="!entry.isCurrent">{{entry.endDate}}</span><span *ngIf="entry.isCurrent">Present</span>
+        </mat-card-subtitle>
+      
         <p>{{entry.description.descriptionText}}</p>
 
-        <small>From {{entry.startDate}}<span *ngIf="!entry.isCurrent"> to {{entry.endDate}}</span></small>
-
         <div *ngFor="let pointSet of entry.description.descriptionPointSets">
-          <p>{{pointSet.pointSetTitle}}</p>
+          <b>{{pointSet.pointSetTitle}}</b>
           <p *ngFor="let point of pointSet.points"> - {{point}}</p>
         </div>
 

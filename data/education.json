@@ -6,10 +6,10 @@
         "isCurrent": true,
         "endDate": "2019-02-25",
         "description": {
-            "descriptionText": "Computer Programming and Analysis",
+            "descriptionText": "Computer Programming and Analysis - 3 Year Advanced Diploma",
             "descriptionPointSets": [
                 {
-                    "pointSetTitle": "3 Year Advanced Diploma",
+                    "pointSetTitle": "",
                     "points": [
                         "Desktop and Web Development",
                         "Database Design and Management",

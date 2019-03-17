@@ -11,19 +11,15 @@
 
     <mat-card-content class="entry">
 
-      <mat-card-title>
-        {{contact.contact.email}}
-      </mat-card-title>
+      <a href="mailto:{{contact.contact.email}}">{{contact.contact.email}}</a>
 
-      <p *ngIf="contact.contact.phones[0]">Phones</p>
-      <div *ngIf="contact.contact.phones[0]">
-        <p *ngFor="let phone of contact.contact.phones"><a href="tel: +{{phone.countryCode}}{{phone.number}}"
-            target="_blank">{{phone.type}}: +{{phone.countryCode}} {{phone.number}}</a>
-        </p>
+      <div *ngIf="contact.contact.phones">
+        <a *ngFor="let phone of contact.contact.phones" href="tel:+{{phone.countryCode}}{{phone.number}}"
+          target="_blank"><p>{{phone.type}}: +{{phone.countryCode}} {{phone.number}}</p></a>
       </div>
-      <p *ngIf="contact.contact.links[0]">Links</p>
-      <div *ngIf="contact.contact.links[0]">
-        <p *ngFor="let link of contact.contact.links"><a href="{{link.url}}" target="_blank">{{link.name}}</a></p>
+
+      <div *ngIf="contact.contact.links">
+        <a *ngFor="let link of contact.contact.links" href="{{link.url}}" target="_blank"><p>{{link.name}}</p></a>
       </div>
 
     </mat-card-content>

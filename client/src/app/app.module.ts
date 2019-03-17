@@ -49,7 +49,6 @@ import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -61,8 +60,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     EducationComponent,
     SkillsComponent,
     ContactComponent,
-    FooterComponent,
-    SidebarComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
