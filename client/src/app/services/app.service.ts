@@ -4,8 +4,6 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { CareerAPI, SkillsAPI, ContactAPI, AppError, AppLoadError, ErrorTypes, AppSaveError } from '../models';
 import { MatSnackBar } from '@angular/material';
-import { Store } from '@ngrx/store';
-import { AppState } from '../store/reducers';
 
 @Injectable({
   providedIn: 'root',
@@ -25,15 +23,15 @@ export class AppService {
   }
 
   getEducation() {
-    return this.http.get(environment.apiUrl + '/getEducation') as Observable<CareerAPI>;
+    return this.http.get(environment.apiUrl + '/getEducationz') as Observable<CareerAPI>;
   }
 
   getSkills() {
-    return this.http.get(environment.apiUrl + '/getSkills') as Observable<SkillsAPI>;
+    return this.http.get(environment.apiUrl + '/getSkillsz') as Observable<SkillsAPI>;
   }
 
   getContact() {
-    return this.http.get(environment.apiUrl + '/getContact') as Observable<ContactAPI>;
+    return this.http.get(environment.apiUrl + '/getContactz') as Observable<ContactAPI>;
   }
 }
 
@@ -41,12 +39,15 @@ export class AppService {
   providedIn: 'root',
 })
 export class ErrorService {
-  constructor(private snackBar: MatSnackBar, private store: Store<AppState>) { }
+  constructor(private snackBar: MatSnackBar) {
+    this.snackBar.dismiss();
+  }
 
   //This functions shows an Error message in a SnackBar and allows a callback function to be run
   showError = (error: AppError, callback: Function = null): void => {
+    this.snackBar.dismiss();
     this.snackBar
-      .open(error.message, error.action)
+      .open(error.message, error.action, { duration: 10000 })
       .onAction()
       .subscribe(() => {
         this.snackBar.dismiss();
@@ -56,4 +57,7 @@ export class ErrorService {
       });
   };
 
+  clearError = (): void => {
+    this.snackBar.dismiss();
+  }
 }

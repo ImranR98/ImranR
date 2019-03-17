@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ExperienceState } from '../store/states';
 import { GetExperience } from '../store/actions';
 import { experienceSelectors } from '../store/selectors';
 import { combineLatest, Subject } from 'rxjs';
 import { takeUntil, map } from 'rxjs/operators';
-import { AppError, CareerAPI } from '../models';
+import { CareerAPI } from '../models';
 import { ErrorService } from '../services/app.service';
 
 @Component({
@@ -13,13 +13,13 @@ import { ErrorService } from '../services/app.service';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<ExperienceState>, private errorService: ErrorService) { }
 
   destroyed$ = new Subject();
   loading: boolean = true;
-  experience: CareerAPI | null;
+  experience: CareerAPI | null = null;
 
   ngOnInit() {
     this.store.dispatch(new GetExperience);
@@ -36,11 +36,18 @@ export class ExperienceComponent implements OnInit {
       this.loading = val.loading;
       this.experience = val.experience;
       
-      if (val.error) {
+      if (val.error && !val.experience && !val.loading) {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetExperience())
         );
+      } else {
+        this.errorService.clearError();
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.complete();
+    this.destroyed$.unsubscribe();
   }
 }

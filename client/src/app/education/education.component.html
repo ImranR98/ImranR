@@ -7,29 +7,30 @@
       </mat-card-title>
     </mat-card-header>
 
-    <div *ngFor="let entry of education.entries;">
-      <mat-divider></mat-divider>
-      <mat-card-content class="entry">
+    <div *ngIf="education">
+      <div *ngFor="let entry of education.entries;">
+        <mat-divider></mat-divider>
+        <mat-card-content class="entry">
 
-        <mat-card-title>
-          {{entry.place}}
-        </mat-card-title>
+          <mat-card-title>
+            {{entry.place}}
+          </mat-card-title>
 
 
-        <mat-card-subtitle>From {{entry.startDate}} to <span *ngIf="!entry.isCurrent">{{entry.endDate}}</span><span
-            *ngIf="entry.isCurrent">Present</span>
-        </mat-card-subtitle>
+          <mat-card-subtitle>From {{entry.startDate}} to <span *ngIf="!entry.isCurrent">{{entry.endDate}}</span><span
+              *ngIf="entry.isCurrent">Present</span>
+          </mat-card-subtitle>
 
-        <p>{{entry.description.descriptionText}}</p>
+          <p>{{entry.description.descriptionText}}</p>
 
-        <div *ngFor="let pointSet of entry.description.descriptionPointSets">
-          <b>{{pointSet.pointSetTitle}}</b>
-          <p *ngFor="let point of pointSet.points"> - {{point}}</p>
-        </div>
+          <div *ngFor="let pointSet of entry.description.descriptionPointSets">
+            <b>{{pointSet.pointSetTitle}}</b>
+            <p *ngFor="let point of pointSet.points"> - {{point}}</p>
+          </div>
 
-      </mat-card-content>
+        </mat-card-content>
+      </div>
     </div>
-
   </div>
 
   <ng-template #loadingScreen>

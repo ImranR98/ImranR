@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ContactState } from '../store/states';
-import { GetContact, GetSkills } from '../store/actions';
+import { GetContact } from '../store/actions';
 import { contactSelectors } from '../store/selectors';
 import { combineLatest, Subject } from 'rxjs';
 import { takeUntil, map } from 'rxjs/operators';
-import { AppError, ContactAPI } from '../models';
+import { ContactAPI } from '../models';
 import { ErrorService } from '../services/app.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { ErrorService } from '../services/app.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<ContactState>, private errorService: ErrorService) { }
 
@@ -36,11 +36,18 @@ export class ContactComponent implements OnInit {
       this.loading = val.loading;
       this.contact = val.contact;
 
-      if (val.error) {
+      if (val.error && !val.contact && !val.loading) {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetContact())
         );
+      } else {
+        this.errorService.clearError();
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.complete();
+    this.destroyed$.unsubscribe();
   }
 }

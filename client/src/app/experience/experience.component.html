@@ -7,6 +7,7 @@
       </mat-card-title>
     </mat-card-header>
 
+    <div *ngIf="experience">
     <div *ngFor="let entry of experience.entries;">
       <mat-divider></mat-divider>
       <mat-card-content class="entry">
@@ -25,8 +26,8 @@
           <b>{{pointSet.pointSetTitle}}</b>
           <p *ngFor="let point of pointSet.points"> - {{point}}</p>
         </div>
-
       </mat-card-content>
+    </div>
     </div>
 
   </div>

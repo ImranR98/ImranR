@@ -9,7 +9,7 @@
 
     <mat-divider></mat-divider>
 
-    <mat-card-content class="entry">
+    <mat-card-content class="entry" *ngIf="contact">
 
       <a href="mailto:{{contact.contact.email}}">{{contact.contact.email}}</a>
 

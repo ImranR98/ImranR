@@ -1,4 +1,4 @@
-<mat-card class="education">
+<mat-card>
   <div *ngIf="!loading else loadingScreen;">
 
     <mat-card-header>
@@ -8,7 +8,7 @@
     </mat-card-header>
     <mat-divider></mat-divider>
 
-    <mat-card-content class="entry">
+    <mat-card-content class="entry" *ngIf="skills">
         <p *ngFor="let entry of skills.entries">{{entry.skill}}</p>
     </mat-card-content>
 

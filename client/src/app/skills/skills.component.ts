@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { SkillsState } from '../store/states';
-import { GetSkills, GetContact } from '../store/actions';
+import { GetSkills } from '../store/actions';
 import { skillsSelectors } from '../store/selectors';
 import { combineLatest, Subject } from 'rxjs';
 import { takeUntil, map } from 'rxjs/operators';
-import { AppError, SkillsAPI } from '../models';
+import { SkillsAPI } from '../models';
 import { ErrorService } from '../services/app.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { ErrorService } from '../services/app.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<SkillsState>, private errorService: ErrorService) { }
 
@@ -36,11 +36,18 @@ export class SkillsComponent implements OnInit {
       this.loading = val.loading;
       this.skills = val.skills;
 
-      if (val.error) {
+      if (val.error && !val.skills && !val.loading) {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetSkills())
         );
+      } else {
+        this.errorService.clearError();
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.complete();
+    this.destroyed$.unsubscribe();
   }
 }
