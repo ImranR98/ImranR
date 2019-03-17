@@ -1,19 +1,21 @@
-<div *ngIf="!loading else loadingScreen;">
-  <mat-card-header>
-    <mat-card-title fxLayoutAlign="center">
-      <mat-icon>code</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Skills
-    </mat-card-title>
-  </mat-card-header>
+<mat-card class="education">
+  <div *ngIf="!loading else loadingScreen;">
 
-  <mat-card class="internal-card">
-  <mat-card-content fxLayout="column" fxLayoutGap="1em">
-      <mat-list dense>
-        <li *ngFor="let entry of skills.entries">{{entry.skill}}</li>
-      </mat-list>
-  </mat-card-content>
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="center">
+        <mat-icon>code</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Skills
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="entry">
+        <p *ngFor="let entry of skills.entries">{{entry.skill}}</p>
+    </mat-card-content>
+
+  </div>
+
+  <ng-template #loadingScreen>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+
 </mat-card>
-</div>
-
-<ng-template #loadingScreen>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>

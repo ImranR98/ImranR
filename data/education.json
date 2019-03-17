@@ -18,5 +18,16 @@
                 }
             ]
         }
+    },
+    {
+        "place": "Al Muntazir Secondary School",
+        "title": "Student",
+        "startDate": "2010",
+        "isCurrent": false,
+        "endDate": "2017",
+        "description": {
+            "descriptionText": "Cambridge IGCSE and A Levels",
+            "descriptionPointSets": []
+        }
     }
 ]

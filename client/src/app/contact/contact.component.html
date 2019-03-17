@@ -1,34 +1,37 @@
-<div *ngIf="!loading else loadingScreen;">
-  <mat-card-header>
-    <mat-card-title fxLayoutAlign="center">
-      <mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact
-    </mat-card-title>
-  </mat-card-header>
+<mat-card>
+  <div *ngIf="!loading else loadingScreen;">
 
-  <mat-card-content fxLayout="column" fxLayoutGap="1em">
     <mat-card-header>
-      <mat-card-title>
-        {{contact.contact.name}}
+      <mat-card-title fxLayoutAlign="center">
+        <mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact
       </mat-card-title>
-      <mat-card-subtitle *ngIf="contact.contact.email">
-        {{contact.contact.email}}
-      </mat-card-subtitle>
     </mat-card-header>
-    <mat-card class="internal-card">
-      <mat-card-content>
-        <p *ngIf="contact.contact.phones[0]">Phones</p>
-        <mat-list *ngIf="contact.contact.phones[0]" dense>
-          <li *ngFor="let phone of contact.contact.phones">{{phone.type}}: +{{phone.countryCode}} {{phone.number}}</li>
-        </mat-list>
-        <p *ngIf="contact.contact.links[0]">Links</p>
-        <mat-list *ngIf="contact.contact.links[0]" dense>
-          <li *ngFor="let link of contact.contact.links"><a href="{{link.url}}" target="_blank">{{link.name}}</a></li>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </mat-card-content>
-</div>
 
-<ng-template #loadingScreen>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="entry">
+
+      <mat-card-title>
+        {{contact.contact.email}}
+      </mat-card-title>
+
+      <p *ngIf="contact.contact.phones[0]">Phones</p>
+      <div *ngIf="contact.contact.phones[0]">
+        <p *ngFor="let phone of contact.contact.phones"><a href="tel: +{{phone.countryCode}}{{phone.number}}"
+            target="_blank">{{phone.type}}: +{{phone.countryCode}} {{phone.number}}</a>
+        </p>
+      </div>
+      <p *ngIf="contact.contact.links[0]">Links</p>
+      <div *ngIf="contact.contact.links[0]">
+        <p *ngFor="let link of contact.contact.links"><a href="{{link.url}}" target="_blank">{{link.name}}</a></p>
+      </div>
+
+    </mat-card-content>
+
+  </div>
+
+  <ng-template #loadingScreen>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+
+</mat-card>

@@ -45,7 +45,7 @@ ensureCareerEntryIsValid = function (entry) {
             valid = false;
             err.push("Is Current is not a boolean");
         } else {
-            if (entry.isCurrent == undefined) {
+            if (!entry.isCurrent) {
                 if (!entry.endDate) {
                     valid = false;
                     err.push("End Date not found");

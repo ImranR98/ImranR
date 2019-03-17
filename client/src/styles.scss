@@ -3,6 +3,23 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
+html,
+body {
+  height: 100%;
+  background-color: #E8EAF6;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.active {
+  background-color: #E8EAF6 !important;
+}
+
+.entry
+{
+  padding-top: 1em;
+}
+
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
@@ -24,16 +41,3 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($app-theme);
-
-html,
-body {
-  height: 100%;
-  background-color: #E8EAF6;
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-.internal-card
-{
-  background-color: #E8EAF6;
-}

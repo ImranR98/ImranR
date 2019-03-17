@@ -1,35 +1,37 @@
-<div *ngIf="!loading else loadingScreen;">
-  <mat-card-header>
-    <mat-card-title fxLayoutAlign="center">
-      <mat-icon>work_outline</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience
-    </mat-card-title>
-  </mat-card-header>
+<mat-card>
+  <div *ngIf="!loading else loadingScreen;">
 
-  <mat-card-content fxLayout="column" fxLayoutGap="1em">
-    <mat-card *ngFor="let entry of experience.entries;" class="internal-card">
-      <mat-card-header>
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="center">
+        <mat-icon>work_outline</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education
+      </mat-card-title>
+    </mat-card-header>
+
+    <div *ngFor="let entry of experience.entries;">
+      <mat-divider></mat-divider>
+      <mat-card-content class="entry">
+
         <mat-card-title>
           {{entry.place}}
         </mat-card-title>
-        <mat-card-subtitle>
-          {{entry.title}}
-        </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{entry.startDate}}</p>
-        <p *ngIf="!entry.isCurrent">{{entry.endDate}}</p>
+
+        <mat-card-subtitle>{{entry.title}}</mat-card-subtitle>
         <p>{{entry.description.descriptionText}}</p>
+
+        <small>From {{entry.startDate}}<span *ngIf="!entry.isCurrent"> to {{entry.endDate}}</span></small>
+
         <div *ngFor="let pointSet of entry.description.descriptionPointSets">
           <p>{{pointSet.pointSetTitle}}</p>
-          <mat-list dense>
-            <li *ngFor="let point of pointSet.points">{{point}}</li>
-          </mat-list>
+          <p *ngFor="let point of pointSet.points"> - {{point}}</p>
         </div>
-      </mat-card-content>
-    </mat-card>
-  </mat-card-content>
-</div>
 
-<ng-template #loadingScreen>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
+      </mat-card-content>
+    </div>
+
+  </div>
+
+  <ng-template #loadingScreen>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+
+</mat-card>

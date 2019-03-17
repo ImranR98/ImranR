@@ -48,6 +48,8 @@ import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ContactComponent } from './contact/contact.component';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
