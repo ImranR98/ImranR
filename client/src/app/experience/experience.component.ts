@@ -35,13 +35,11 @@ export class ExperienceComponent implements OnInit, OnDestroy {
     ).subscribe(val => {
       this.loading = val.loading;
       this.experience = val.experience;
-      
-      if (val.error && !val.experience && !val.loading) {
+
+      if (val.error && !val.experience) {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetExperience())
         );
-      } else {
-        this.errorService.clearError();
       }
     });
   }

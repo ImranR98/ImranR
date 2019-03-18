@@ -40,8 +40,6 @@ export class SkillsComponent implements OnInit, OnDestroy {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetSkills())
         );
-      } else {
-        this.errorService.clearError();
       }
     });
   }

@@ -40,8 +40,6 @@ export class EducationComponent implements OnInit, OnDestroy {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetEducation())
         );
-      } else {
-        this.errorService.clearError();
       }
     });
   }

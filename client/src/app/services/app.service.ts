@@ -27,11 +27,11 @@ export class AppService {
   }
 
   getSkills() {
-    return this.http.get(environment.apiUrl + '/getSkills') as Observable<SkillsAPI>;
+    return this.http.get(environment.apiUrl + '/getSkillz') as Observable<SkillsAPI>;
   }
 
   getContact() {
-    return this.http.get(environment.apiUrl + '/getContact') as Observable<ContactAPI>;
+    return this.http.get(environment.apiUrl + '/getContactz') as Observable<ContactAPI>;
   }
 }
 
@@ -39,25 +39,21 @@ export class AppService {
   providedIn: 'root',
 })
 export class ErrorService {
-  constructor(private snackBar: MatSnackBar) {
-    this.snackBar.dismiss();
-  }
+  constructor(private snackBar: MatSnackBar) { }
 
   //This functions shows an Error message in a SnackBar and allows a callback function to be run
   showError = (error: AppError, callback: Function = null): void => {
     this.snackBar.dismiss();
-    this.snackBar
-      .open(error.message, error.action, { duration: 10000 })
-      .onAction()
-      .subscribe(() => {
-        this.snackBar.dismiss();
-        if (callback) {
-          callback();
-        }
-      });
+    setTimeout(() => {
+      this.snackBar
+        .open(error.message, error.action, { duration: 10000 })
+        .onAction()
+        .subscribe(() => {
+          this.snackBar.dismiss();
+          if (callback) {
+            callback();
+          }
+        });
+    });
   };
-
-  clearError = (): void => {
-    this.snackBar.dismiss();
-  }
 }

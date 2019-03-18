@@ -40,8 +40,6 @@ export class ContactComponent implements OnInit, OnDestroy {
         this.errorService.showError(val.error, () =>
           this.store.dispatch(new GetContact())
         );
-      } else {
-        this.errorService.clearError();
       }
     });
   }
