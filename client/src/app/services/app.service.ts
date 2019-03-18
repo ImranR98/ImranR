@@ -27,7 +27,7 @@ export class AppService {
   }
 
   getSkills() {
-    return this.http.get(environment.apiUrl + '/getSkill') as Observable<SkillsAPI>;
+    return this.http.get(environment.apiUrl + '/getSkills') as Observable<SkillsAPI>;
   }
 
   getContact() {
