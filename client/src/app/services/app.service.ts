@@ -27,11 +27,11 @@ export class AppService {
   }
 
   getSkills() {
-    return this.http.get(environment.apiUrl + '/getSkillz') as Observable<SkillsAPI>;
+    return this.http.get(environment.apiUrl + '/getSkill') as Observable<SkillsAPI>;
   }
 
   getContact() {
-    return this.http.get(environment.apiUrl + '/getContactz') as Observable<ContactAPI>;
+    return this.http.get(environment.apiUrl + '/getContact') as Observable<ContactAPI>;
   }
 }
 
