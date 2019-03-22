@@ -67,8 +67,8 @@ app.get("/getContact", (req, res) => {
 //======================================
 
 //All other routes are handled by the Angular App which is served here
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/AngularClient/dist/client/index.html"));
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname + "/client/dist/client/index.html"));
 });
 
 //Set Port
