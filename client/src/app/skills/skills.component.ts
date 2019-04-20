@@ -12,4 +12,6 @@ export class SkillsComponent implements OnInit {
   ngOnInit() {
   }
 
+  skills: string = '../../assets/skills.png';
+
 }

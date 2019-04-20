@@ -1,10 +1,10 @@
 <div fxLayout="column" fxLayoutGap="1em">
-    <mat-card>
+    <mat-card [ngStyle]="{'background-image': 'url(' + experience + ')'}">
         <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
             <mat-icon>work_outline</mat-icon>Experience
         </mat-card-title>
     </mat-card>
-    <mat-card [ngStyle]="{'background-image': 'url(' + seneca + ')'}">
+    <mat-card>
         <mat-card-title>
             Seneca College<br>
             <small>Programmer - Co-op</small>

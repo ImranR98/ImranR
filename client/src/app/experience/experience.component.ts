@@ -12,6 +12,6 @@ export class ExperienceComponent implements OnInit {
   ngOnInit() {
   }
 
-  seneca: string = '../../assets/seneca50.png';
+  experience: string = '../../assets/experience.png';
 
 }

@@ -12,6 +12,6 @@ export class EducationComponent implements OnInit {
   ngOnInit() {
   }
 
-  seneca: string = '../../assets/seneca50.png';
+  education: string = '../../assets/education.png';
 
 }

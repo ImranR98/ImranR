@@ -1,11 +1,11 @@
 <div fxLayout="column" fxLayoutGap="1em">
-  <mat-card>
+  <mat-card [ngStyle]="{'background-image': 'url(' + skills + ')'}">
     <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
       <mat-icon>code_outline</mat-icon>Skills
     </mat-card-title>
   </mat-card>
 
-  <mat-card fxLayout="column" fxLayoutAlign="start start center" fxLayoutAlign.lt-sm="center center center" >
+  <mat-card fxLayout="column" fxLayoutAlign="start start center" fxLayoutAlign.lt-sm="center center center">
     <div fxLayout="row" fxLayoutGap="1em">
       <p>Angular</p>
       <p>|</p>
