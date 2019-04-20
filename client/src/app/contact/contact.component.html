@@ -1,33 +1,18 @@
-<mat-card>
-  <div *ngIf="!loading else loadingScreen;">
+<div fxLayout="column" fxLayoutGap="1em">
+  <mat-card>
+    <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
+      <mat-icon>perm_identity_outline</mat-icon>Contact
+    </mat-card-title>
+  </mat-card>
 
-    <mat-card-header>
-      <mat-card-title fxLayoutAlign="center">
-        <mat-icon>perm_identity</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact
-      </mat-card-title>
-    </mat-card-header>
-
-    <mat-divider></mat-divider>
-
-    <mat-card-content class="entry" *ngIf="contact">
-
-      <a href="mailto:{{contact.contact.email}}">{{contact.contact.email}}</a>
-
-      <div *ngIf="contact.contact.phones">
-        <a *ngFor="let phone of contact.contact.phones" href="tel:+{{phone.countryCode}}{{phone.number}}"
-          target="_blank"><p>{{phone.type}}: +{{phone.countryCode}} {{phone.number}}</p></a>
-      </div>
-
-      <div *ngIf="contact.contact.links">
-        <a *ngFor="let link of contact.contact.links" href="{{link.url}}" target="_blank"><p>{{link.name}}</p></a>
-      </div>
-
-    </mat-card-content>
-
-  </div>
-
-  <ng-template #loadingScreen>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  </ng-template>
-
-</mat-card>
+  <mat-card>
+    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/git.png'
+        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://github.com/ImranR98" target="_blank">GitHub</a></p>
+    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/link.png'
+        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/imran-remtulla-419564158/"
+        target="_blank">LinkedIn</a></p>
+    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/mail.png'
+        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="mailto:iremtulla15@gmail.com" target="_blank">Email</a>
+    </p>
+  </mat-card>
+</div>

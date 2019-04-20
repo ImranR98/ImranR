@@ -4,20 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { environment } from 'src/environments/environment';
-
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
-import { EffectsModule } from '@ngrx/effects';
-import { rootEffects } from './store/effects';
-import { reducers } from './store/reducers';
 
 import {
   MatButtonModule,
@@ -41,26 +34,26 @@ import {
   MatDividerModule,
   MatListModule
 } from '@angular/material';
-import { HomeComponent } from './home/home.component';
+
+import { ExperienceComponent } from './experience/experience.component';
 import { HeaderComponent } from './header/header.component';
 import { Error404Component } from './error404/error404.component';
-import { ExperienceComponent } from './experience/experience.component';
+
+import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    ExperienceComponent,
     HeaderComponent,
     Error404Component,
-    ExperienceComponent,
+    AboutComponent,
     EducationComponent,
     SkillsComponent,
-    ContactComponent,
-    FooterComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -89,14 +82,7 @@ import { FooterComponent } from './footer/footer.component';
     MatDividerModule,
     MatListModule,
     ReactiveFormsModule,
-    StoreDevtoolsModule,
-    CommonModule,
-    EffectsModule.forRoot(rootEffects),
-    StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production
-    })    
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

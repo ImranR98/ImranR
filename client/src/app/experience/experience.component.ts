@@ -1,51 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { ExperienceState } from '../store/states';
-import { GetExperience } from '../store/actions';
-import { experienceSelectors } from '../store/selectors';
-import { combineLatest, Subject } from 'rxjs';
-import { takeUntil, map } from 'rxjs/operators';
-import { CareerAPI } from '../models';
-import { ErrorService } from '../services/app.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit, OnDestroy {
+export class ExperienceComponent implements OnInit {
 
-  constructor(private store: Store<ExperienceState>, private errorService: ErrorService) { }
-
-  destroyed$ = new Subject();
-  loading: boolean = true;
-  experience: CareerAPI | null = null;
+  constructor() { }
 
   ngOnInit() {
-    this.store.dispatch(new GetExperience);
-    combineLatest(
-      this.store.select(experienceSelectors.selectLoading),
-      this.store.select(experienceSelectors.selectError),
-      this.store.select(experienceSelectors.selectExperience)
-    ).pipe(
-      takeUntil(this.destroyed$),
-      map(([loading, error, experience]) => {
-        return { loading, error, experience };
-      })
-    ).subscribe(val => {
-      this.loading = val.loading;
-      this.experience = val.experience;
-
-      if (val.error && !val.experience) {
-        this.errorService.showError(val.error, () =>
-          this.store.dispatch(new GetExperience())
-        );
-      }
-    });
   }
 
-  ngOnDestroy() {
-    this.destroyed$.complete();
-    this.destroyed$.unsubscribe();
-  }
+  seneca: string = '../../assets/seneca50.png';
+
 }

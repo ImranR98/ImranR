@@ -1,40 +1,15 @@
-<mat-card>
-  <div *ngIf="!loading else loadingScreen;">
+<div fxLayout="column" fxLayoutGap="1em">
+    <mat-card>
+        <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
+            <mat-icon>book_outline</mat-icon>Education
+        </mat-card-title>
+    </mat-card>
 
-    <mat-card-header>
-      <mat-card-title fxLayoutAlign="center">
-        <mat-icon>book</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Education
-      </mat-card-title>
-    </mat-card-header>
-
-    <div *ngIf="education">
-      <div *ngFor="let entry of education.entries;">
-        <mat-divider></mat-divider>
-        <mat-card-content class="entry">
-
-          <mat-card-title>
-            {{entry.place}}
-          </mat-card-title>
-
-
-          <mat-card-subtitle>From {{entry.startDate}} to <span *ngIf="!entry.isCurrent">{{entry.endDate}}</span><span
-              *ngIf="entry.isCurrent">Present</span>
-          </mat-card-subtitle>
-
-          <p>{{entry.description.descriptionText}}</p>
-
-          <div *ngFor="let pointSet of entry.description.descriptionPointSets">
-            <b>{{pointSet.pointSetTitle}}</b>
-            <p *ngFor="let point of pointSet.points"> - {{point}}</p>
-          </div>
-
+    <mat-card [ngStyle]="{'background-image': 'url(' + seneca + ')'}">
+        <mat-card-title>Seneca College</mat-card-title>
+        <mat-card-subtitle>September 2017 to Present</mat-card-subtitle>
+        <mat-card-content>
+            <p>Content comes here...</p>
         </mat-card-content>
-      </div>
-    </div>
-  </div>
-
-  <ng-template #loadingScreen>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  </ng-template>
-
-</mat-card>
+    </mat-card>
+</div>

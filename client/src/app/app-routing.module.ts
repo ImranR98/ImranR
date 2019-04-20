@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { Error404Component } from './error404/error404.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { Error404Component } from './error404/error404.component';
+import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
@@ -10,40 +10,37 @@ import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home/experience',
+    redirectTo: '/experience',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    children: [
-      {
-        path: 'experience',
-        component: ExperienceComponent
-      },
-      {
-        path: 'education',
-        component: EducationComponent
-      },
-      {
-        path: 'skills',
-        component: SkillsComponent
-      },
-      {
-        path: 'contact',
-        component: ContactComponent
-      },
-      {
-        path: '404',
-        component: Error404Component
-      }
-    ]
+    path: '404',
+    component: Error404Component
   },
-
+  {
+    path: 'experience',
+    component: ExperienceComponent
+  },
+  {
+    path: 'education',
+    component: EducationComponent
+  },
+  {
+    path: 'skills',
+    component: SkillsComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
   {
     path: '**',
-    redirectTo: '/home/404'
-  },
+    redirectTo: '/404'
+  }
 ];
 
 @NgModule({

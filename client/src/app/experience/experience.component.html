@@ -1,39 +1,23 @@
-<mat-card>
-  <div *ngIf="!loading else loadingScreen;">
-
-    <mat-card-header>
-      <mat-card-title fxLayoutAlign="center">
-        <mat-icon>work_outline</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experience
-      </mat-card-title>
-    </mat-card-header>
-
-    <div *ngIf="experience">
-    <div *ngFor="let entry of experience.entries;">
-      <mat-divider></mat-divider>
-      <mat-card-content class="entry">
-
-        <mat-card-title>
-          {{entry.title}}<small> - {{entry.place}}</small>
+<div fxLayout="column" fxLayoutGap="1em">
+    <mat-card>
+        <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
+            <mat-icon>work_outline</mat-icon>Experience
         </mat-card-title>
-        
-
-        <mat-card-subtitle>From {{entry.startDate}} to <span *ngIf="!entry.isCurrent">{{entry.endDate}}</span><span *ngIf="entry.isCurrent">Present</span>
-        </mat-card-subtitle>
-      
-        <p>{{entry.description.descriptionText}}</p>
-
-        <div *ngFor="let pointSet of entry.description.descriptionPointSets">
-          <b>{{pointSet.pointSetTitle}}</b>
-          <p *ngFor="let point of pointSet.points"> - {{point}}</p>
-        </div>
-      </mat-card-content>
-    </div>
-    </div>
-
-  </div>
-
-  <ng-template #loadingScreen>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  </ng-template>
-
-</mat-card>
+    </mat-card>
+    <mat-card [ngStyle]="{'background-image': 'url(' + seneca + ')'}">
+        <mat-card-title>
+            Seneca College<br>
+            <small>Programmer - Co-op</small>
+        </mat-card-title>
+        <mat-card-subtitle>January 2019 to Present</mat-card-subtitle>
+        <mat-card-content>
+            <p>Worked with Angular, Node.js and SQL</p>
+            <mat-divider [inset]="true"></mat-divider>
+            <p><b>International Student Application App</b></p>
+            <p>Content comes here...</p>
+            <mat-divider [inset]="true"> </mat-divider>
+            <p><b>Chatbot Responses Tool</b></p>
+            <p>Content comes here...</p>
+        </mat-card-content>
+    </mat-card>
+</div>
