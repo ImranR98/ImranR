@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#For Google Drive Desktop App
+*.drivedownload
+*.driveupload
