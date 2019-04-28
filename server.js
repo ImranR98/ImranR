@@ -30,13 +30,9 @@ let allowCrossDomain = function (req, res, next) {
 }
 app.use(allowCrossDomain);
 
-//API Routes
-//======================================
-//None for now
-
 //======================================
 
-//All other routes are handled by the Angular App which is served here
+//All routes are handled by the Angular App which is served here
 app.get('*', (req, res) => {
     res.sendFile(path.join(clientDir + '/dist/client/index.html'));
 });
