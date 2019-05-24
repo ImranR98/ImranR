@@ -1,24 +1,38 @@
-<mat-card>
-    <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
-        <mat-card-title>Imran Remtulla</mat-card-title>
-        <mat-card-subtitle>Toronto&nbsp;&nbsp;<img src='../../assets/ca.svg' style='width:12pt;'></mat-card-subtitle>
-        <mat-card-subtitle><small>Software development student with a passion for learning and an interest in Web and
-                App development</small></mat-card-subtitle>
-    </div>
-    <mat-card-content fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="center center" fxLayoutGap="1em">
-        <div fxLayout.lt-xs="column" fxLayoutGap="1em">
+<mat-card fxLayout="row">
+    <div fxLayout="column" fxFlex="100%">
+        <div fxLayout="row">
+            <div fxLayout="column" fxFlex="100%">
+                <mat-card-title>Imran Remtulla</mat-card-title>
+                <mat-card-subtitle>Toronto&nbsp;&nbsp;<img src='../../assets/ca.svg' style='width:12pt;'>
+                </mat-card-subtitle>
+                <mat-card-subtitle><small>Software development student with a passion for learning and an interest in
+                        Web and
+                        App development</small></mat-card-subtitle>
+            </div>
+            <button mat-icon-button routerLinkActive="active" [matMenuTriggerFor]="menu" fxHide fxShow.lt-sm>
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLinkActive="active smallNavButton" routerLink="/experience">Experience</button>
+                <button mat-menu-item routerLinkActive="active smallNavButton" routerLink="/education">Education</button>
+                <button mat-menu-item routerLinkActive="active smallNavButton" routerLink="/projects">Projects</button>
+                <button mat-menu-item routerLinkActive="active smallNavButton" routerLink="/skills">Skills</button>
+                <button mat-menu-item routerLinkActive="active smallNavButton" routerLink="/contact">Contact</button>
+                <button mat-menu-item routerLinkActive="activeAccent smallNavButton" routerLink="/about">About</button>
+            </mat-menu>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" fxHide fxShow.sm fxShow.gt-sm>
             <button mat-raised-button color="primary" routerLinkActive="active"
                 routerLink="/experience">Experience</button>
             <button mat-raised-button color="primary" routerLinkActive="active"
                 routerLink="/education">Education</button>
-        </div>
-        <div fxLayout.lt-xs="column" fxLayoutGap="1em">
             <button mat-raised-button color="primary" routerLinkActive="active" routerLink="/projects">Projects</button>
             <button mat-raised-button color="primary" routerLinkActive="active" routerLink="/skills">Skills</button>
-        </div>
-        <div fxLayout.lt-xs="column" fxLayoutGap="1em">
             <button mat-raised-button color="primary" routerLinkActive="active" routerLink="/contact">Contact</button>
             <button mat-raised-button color="accent" routerLinkActive="activeAccent" routerLink="/about">About</button>
         </div>
-    </mat-card-content>
+
+    </div>
 </mat-card>

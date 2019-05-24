@@ -40,6 +40,10 @@ $app-theme: mat-dark-theme($app-primary, $app-accent);
   color: #530922 !important;
 }
 
+.smallNavButton {
+  background-color: #eeeeee;
+}
+
 mat-card {
   background-color: #37474f !important;
 }
