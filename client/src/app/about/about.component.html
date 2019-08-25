@@ -1,11 +1,6 @@
-<div fxLayout="column" fxLayoutGap="1em">
-    <mat-card [ngStyle]="{'background-image': 'url(' + about + ')'}">
-        <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
-            <mat-icon>info_outline</mat-icon>About
-        </mat-card-title>
-    </mat-card>
-
-    <mat-card>
+<div fxLayout="column">
+        <app-title [bgImage]=about [matIcon]="'info_outline'" [title]="'About'"></app-title>
+        <mat-card class="stdMargin">
         <p fxLayout="row" fxLayoutAlign="start center"><a href="https://github.com/ImranR98/ImranR-Resume"
                 target="_blank">Made with</a>&nbsp;&nbsp;<a href="https://github.com/ImranR98/ImranR-Resume"
                 target="_blank"><img src='../../assets/angular.svg' style='width:2em;'></a></p>

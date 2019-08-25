@@ -1,18 +1,15 @@
-<div fxLayout="column" fxLayoutGap="1em">
-  <mat-card [ngStyle]="{'background-image': 'url(' + contact + ')'}">
-    <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
-      <mat-icon>perm_identity_outline</mat-icon>Contact
-    </mat-card-title>
-  </mat-card>
-
-  <mat-card>
-    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/git.png'
-        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://github.com/ImranR98" target="_blank">GitHub</a></p>
-    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/link.png'
-        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/imran-remtulla-419564158/"
-        target="_blank">LinkedIn</a></p>
-    <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/mail.png'
-        style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="mailto:iremtulla15@gmail.com" target="_blank">Email</a>
-    </p>
-  </mat-card>
+<div fxLayout="column">
+    <app-title [bgImage]=contact [matIcon]="'perm_identity'" [title]="'Contact'"></app-title>
+    <mat-card class="stdMargin">
+        <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/git.png' *ngIf="isDark"
+                style='width:1em;'><img src='../../assets/gitDark.png' *ngIf="!isDark"
+                style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://github.com/ImranR98" target="_blank">GitHub</a>
+        </p>
+        <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/link.png'
+                style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/imran-remtulla-419564158/"
+                target="_top">LinkedIn</a></p>
+        <p fxLayout="row" fxLayoutAlign="start center"><img src='../../assets/mail.png'
+                style='width:1em;'>&nbsp;&nbsp;&nbsp;<a href="mailto:iremtulla15@gmail.com" target="_top">Email</a>
+        </p>
+    </mat-card>
 </div>

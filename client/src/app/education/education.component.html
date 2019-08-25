@@ -1,11 +1,6 @@
-<div fxLayout="column" fxLayoutGap="1em">
-    <mat-card [ngStyle]="{'background-image': 'url(' + education + ')'}">
-        <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
-            <mat-icon>book_outline</mat-icon>Education
-        </mat-card-title>
-    </mat-card>
-
-    <mat-card>
+<div fxLayout="column">
+    <app-title [bgImage]=education [matIcon]="'book_outline'" [title]="'Education'"></app-title>
+    <mat-card class="stdMargin">
         <mat-card-title>Seneca College</mat-card-title>
         <mat-card-subtitle>September 2017 to Present</mat-card-subtitle>
         <mat-card-content>

@@ -1,59 +1,72 @@
-<div fxLayout="column" fxLayoutGap="1em">
-  <mat-card [ngStyle]="{'background-image': 'url(' + skills + ')'}">
-    <mat-card-title fxLayout="row" fxLayoutAlign="start top" fxLayoutAlign.lt-sm="center top">
-      <mat-icon>code_outline</mat-icon>Skills
-    </mat-card-title>
-  </mat-card>
-
-  <mat-card fxLayout="row-wrap" fxLayout.lt-sm="column" fxLayoutAlign="start start center" fxLayoutAlign.lt-sm="center center center"
-    fxLayoutGap="2em" fxLayoutGap.lt-sm="0em">
+<div fxLayout="column">
+  <app-title [bgImage]=skills [matIcon]="'emoji_symbols'" [title]="'Skills'"></app-title>
+  <mat-card class="stdMargin" fxLayout="row-wrap" fxLayout.lt-sm="column" fxLayoutAlign="start start center"
+    fxLayoutAlign.lt-sm="center start center" fxLayoutGap="2em" fxLayoutGap.lt-sm="0em">
     <div>
-      <div fxLayout="column" fxLayoutAlign.lt-sm="default center">
-        <p>Web Development</p>
-        <mat-card-subtitle>Angular</mat-card-subtitle>
-        <mat-card-subtitle>Node.js</mat-card-subtitle>
-        <mat-card-subtitle>Express.js</mat-card-subtitle>
-        <mat-card-subtitle>React</mat-card-subtitle>
-        <mat-card-subtitle>jQuery</mat-card-subtitle>
-        <mat-card-subtitle>AJAX</mat-card-subtitle>
-        <mat-card-subtitle>REST APIs</mat-card-subtitle>
+      <div fxLayout="column" fxLayoutGap="1em">
+        <span>Web Development</span>
+        <div>
+          <mat-card-subtitle>Angular</mat-card-subtitle>
+          <mat-card-subtitle>Node.js</mat-card-subtitle>
+          <mat-card-subtitle>Express.js</mat-card-subtitle>
+          <mat-card-subtitle>React</mat-card-subtitle>
+          <mat-card-subtitle>jQuery</mat-card-subtitle>
+          <mat-card-subtitle>AJAX</mat-card-subtitle>
+          <mat-card-subtitle>REST APIs</mat-card-subtitle>
+        </div>
       </div>
-      <div fxLayout="column" fxLayoutAlign.lt-sm="default center">
-        <p>Languages</p>
-        <mat-card-subtitle>Javascript</mat-card-subtitle>
-        <mat-card-subtitle>C++ / C</mat-card-subtitle>
-        <mat-card-subtitle>TypeScript</mat-card-subtitle>
-        <mat-card-subtitle>SQL</mat-card-subtitle>
-        <mat-card-subtitle>Java</mat-card-subtitle>
-        <mat-card-subtitle>CLLE</mat-card-subtitle>
-        <mat-card-subtitle>RPGLE</mat-card-subtitle>
+      <mat-divider [inset]="true"></mat-divider>
+      <br>
+      <div fxLayout="column" fxLayoutGap="1em">
+        <span>Languages</span>
+        <div>
+          <mat-card-subtitle>Javascript</mat-card-subtitle>
+          <mat-card-subtitle>C++ / C</mat-card-subtitle>
+          <mat-card-subtitle>TypeScript</mat-card-subtitle>
+          <mat-card-subtitle>SQL</mat-card-subtitle>
+          <mat-card-subtitle>Java</mat-card-subtitle>
+          <mat-card-subtitle>CLLE</mat-card-subtitle>
+          <mat-card-subtitle>RPGLE</mat-card-subtitle>
+        </div>
       </div>
+      <mat-divider [inset]="true" fxHide fxShow.lt-sm></mat-divider>
+      <br>
     </div>
     <div>
-      <div fxLayout="column" fxLayoutAlign.lt-sm="default center">
-        <p>Database Management</p>
-        <mat-card-subtitle>PostgreSQL</mat-card-subtitle>
-        <mat-card-subtitle>MongoDB</mat-card-subtitle>
-        <mat-card-subtitle>Oracle 12c</mat-card-subtitle>
-        <mat-card-subtitle>MySQL</mat-card-subtitle>
-        <mat-card-subtitle>IBM DB2</mat-card-subtitle>
+      <div fxLayout="column" fxLayoutGap="1em">
+        <span>Database Management</span>
+        <div>
+          <mat-card-subtitle>PostgreSQL</mat-card-subtitle>
+          <mat-card-subtitle>MongoDB</mat-card-subtitle>
+          <mat-card-subtitle>Oracle 12c</mat-card-subtitle>
+          <mat-card-subtitle>MySQL</mat-card-subtitle>
+          <mat-card-subtitle>IBM DB2</mat-card-subtitle>
+        </div>
       </div>
-      <div fxLayout="column" fxLayoutAlign.lt-sm="default center">
-        <p>Development Tools</p>
-        <mat-card-subtitle>Visual Studio</mat-card-subtitle>
-        <mat-card-subtitle>Visual Studio Code</mat-card-subtitle>
-        <mat-card-subtitle>Eclipse</mat-card-subtitle>
-        <mat-card-subtitle>Sublime</mat-card-subtitle>
+      <mat-divider [inset]="true"></mat-divider>
+      <br>
+      <div fxLayout="column" fxLayoutGap="1em">
+        <span>Development Tools</span>
+        <div>
+          <mat-card-subtitle>Visual Studio</mat-card-subtitle>
+          <mat-card-subtitle>Visual Studio Code</mat-card-subtitle>
+          <mat-card-subtitle>Eclipse</mat-card-subtitle>
+          <mat-card-subtitle>Sublime</mat-card-subtitle>
+        </div>
       </div>
+      <mat-divider [inset]="true" fxHide fxShow.lt-sm></mat-divider>
+      <br>
     </div>
     <div>
-      <div fxLayout="column" fxLayoutAlign.lt-sm="default center">
-        <p>Other</p>
-        <mat-card-subtitle>Git</mat-card-subtitle>
-        <mat-card-subtitle>Angular Material</mat-card-subtitle>
-        <mat-card-subtitle>NgRx</mat-card-subtitle>
-        <mat-card-subtitle>HTML / CSS</mat-card-subtitle>
-        <mat-card-subtitle>Adobe Photoshop</mat-card-subtitle>
+      <div fxLayout="column" fxLayoutGap="1em">
+        <span>Other</span>
+        <div>
+          <mat-card-subtitle>Git</mat-card-subtitle>
+          <mat-card-subtitle>Angular Material</mat-card-subtitle>
+          <mat-card-subtitle>NgRx</mat-card-subtitle>
+          <mat-card-subtitle>HTML / CSS</mat-card-subtitle>
+          <mat-card-subtitle>Adobe Photoshop</mat-card-subtitle>
+        </div>
       </div>
     </div>
   </mat-card>

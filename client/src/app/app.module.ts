@@ -32,7 +32,8 @@ import {
   MatSortModule,
   MatStepperModule,
   MatDividerModule,
-  MatListModule
+  MatListModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import { ExperienceComponent } from './experience/experience.component';
@@ -44,6 +45,7 @@ import { EducationComponent } from './education/education.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { ProjectsComponent } from './projects/projects.component';
     EducationComponent,
     SkillsComponent,
     ContactComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +87,8 @@ import { ProjectsComponent } from './projects/projects.component';
     MatDividerModule,
     MatListModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

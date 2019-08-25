@@ -1,59 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
-  background-color: #102027;
-  margin: 0;
-  font-family: Raleway, Roboto, 'Helvetica Neue', sans-serif;
-}
-
+//Importing Angular Material
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
 
+//Define custom font to use with Material, then include it
 $custom-typography: mat-typography-config($font-family: "'Raleway', sans-serif;");
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat-core($custom-typography);
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$app-primary: mat-palette($mat-blue-gray);
-$app-accent:  mat-palette($mat-pink, A200, A100, A400);
+//Define custom color palettes for the App's primary, accent and warning colors (numbers indicate default, lighter and darker variants)
+$dark-mode-primary: mat-palette($mat-blue-gray, 800, 700, 900);
+$dark-mode-accent:  mat-palette($mat-indigo, 500, 200, 700);
+$dark-mode-warn: mat-palette($mat-red, 200);
 
-// Create the theme object (a Sass map containing all of the palettes).
-$app-theme: mat-dark-theme($app-primary, $app-accent);
+//Define a theme using the above palettes
+$dark-mode-theme: mat-dark-theme($dark-mode-primary, $dark-mode-accent, $dark-mode-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($app-theme);
+//Define another theme and import it in a class (not default)
+$light-mode-primary:  mat-palette($mat-indigo, 500, 200, 700);
+$light-mode-accent: mat-palette($mat-gray, 500, 300, 800);
+$light-mode-warn: mat-palette($mat-red);
+$light-mode-theme: mat-light-theme($light-mode-primary, $light-mode-accent, $light-mode-warn);
 
-.active {
-  color: #102027 !important;
+
+.dark-theme {
+  @include angular-material-theme($dark-mode-theme);
+
+  .bigContainer, .bigContainer2 {
+    background-color: mat-color($dark-mode-primary, darker) !important;
+  }
+
+  mat-card, .cardBG {
+    background-color: mat-color($dark-mode-primary) !important;
+    color: #FFFFFF !important;
+  }
+
+  .headerBG {
+    background-color: mat-color($dark-mode-primary, lighter) !important;
+    color: #FFFFFF !important;
+  }
+  
+  .active {
+    color: mat-color($dark-mode-primary, darker) !important;
+  }
+  
+  .contrastText {
+    color: #FFFFFF !important;
+  }
 }
 
-.activeAccent {
-  color: #530922 !important;
+.light-theme {
+  @include angular-material-theme($light-mode-theme);
+
+  .bigContainer, .bigContainer2 {
+    background-color: mat-color($light-mode-primary, lighter);
+  }
+
+  .headerBG {
+    background-color: mat-color($light-mode-primary, darker);
+    color: #FFF !important;
+  }
+
+  .cardBG {
+    background-color: mat-color($light-mode-primary) !important;
+    color: #FFF !important;
+  }
+
+  .active {
+    color: mat-color($light-mode-primary, lighter) !important;
+  }
+
+  .contrastText {
+    color: rgb(0, 0, 0) !important;
+  }
 }
 
-.smallNavButton {
-  background-color: #eeeeee;
+html {
+  font-family: Raleway, Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #000;
 }
 
-mat-card {
-  background-color: #37474f !important;
+html, body, .bigContainer {
+  height: 100%;
+  margin: 0;
 }
 
-mat-card-title mat-icon {
-  font-size: 1em !important;
-  margin-top: 0.05em;
-  margin-right: 0.5em;
+.bigContainer, .bigContainer2 {
+  background-color: #000;
+}
+
+app-header {
+  position: -webkit-sticky /* Safari */;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+.higher {
+  z-index: 1;
 }
 
 a {
   color: inherit;
+}
+
+app-header a {
+  text-decoration: none;
+}
+
+.stdPadding {
+  padding: 1em;
+}
+
+.stdPaddingRight {
+  padding-right: 1em;
+}
+
+.stdMargin {
+  margin: 1em;
+}
+
+.imageFileName {
+  width: 20vw;
+}
+
+.textOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
