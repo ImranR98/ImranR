@@ -7,7 +7,7 @@ $custom-typography: mat-typography-config($font-family: "'Raleway', sans-serif;"
 
 //Define custom color palettes for the App's primary, accent and warning colors (numbers indicate default, lighter and darker variants)
 $dark-mode-primary: mat-palette($mat-blue-gray, 800, 700, 900);
-$dark-mode-accent:  mat-palette($mat-indigo, 500, 200, 700);
+$dark-mode-accent:  mat-palette($mat-gray, 500, 200, 700);
 $dark-mode-warn: mat-palette($mat-red, 200);
 
 //Define a theme using the above palettes
@@ -119,6 +119,12 @@ app-header a {
 
 .stdMargin {
   margin: 1em;
+}
+
+.stdMarginNoBottom {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .imageFileName {

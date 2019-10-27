@@ -59,6 +59,20 @@
     </div>
     <div>
       <div fxLayout="column" fxLayoutGap="1em">
+        <span>Platform</span>
+        <div>
+          <mat-card-subtitle>Pivotal Cloud Foundry</mat-card-subtitle>
+          <mat-card-subtitle>Concourse CI</mat-card-subtitle>
+          <mat-card-subtitle>Apigee API Management</mat-card-subtitle>
+          <mat-card-subtitle>Jira</mat-card-subtitle>
+          <mat-card-subtitle>ServiceNow</mat-card-subtitle>
+          <mat-card-subtitle>Heroku</mat-card-subtitle>
+          <mat-card-subtitle>Azure DevOps</mat-card-subtitle>
+        </div>
+      </div>
+      <mat-divider [inset]="true"></mat-divider>
+      <br>
+      <div fxLayout="column" fxLayoutGap="1em">
         <span>Other</span>
         <div>
           <mat-card-subtitle>Git</mat-card-subtitle>
@@ -68,6 +82,8 @@
           <mat-card-subtitle>Adobe Photoshop</mat-card-subtitle>
         </div>
       </div>
+      <mat-divider [inset]="true" fxHide fxShow.lt-sm></mat-divider>
+      <br>
     </div>
   </mat-card>
 </div>
