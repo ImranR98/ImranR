@@ -12,29 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatFormFieldModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatPaginatorModule,
-  MatTableModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatProgressBarModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatDividerModule,
-  MatListModule,
-  MatTooltipModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ExperienceComponent } from './experience/experience.component';
 import { HeaderComponent } from './header/header.component';
@@ -68,24 +52,10 @@ import { TitleComponent } from './title/title.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatGridListModule,
     MatIconModule,
-    MatInputModule,
     MatMenuModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatProgressBarModule,
-    MatRadioModule,
-    MatSelectModule,
     MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
     MatDividerModule,
-    MatListModule,
     ReactiveFormsModule,
     CommonModule,
     MatTooltipModule
