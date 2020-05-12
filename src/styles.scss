@@ -1,0 +1,90 @@
+//Importing Angular Material
+@import '~@angular/material/theming';
+
+//Define custom font to use with Material, then include it
+$custom-typography: mat-typography-config($font-family: "'Raleway', sans-serif;");
+@include mat-core($custom-typography);
+
+//Define custom color palettes for the App's primary, accent and warning colors (numbers indicate default, lighter and darker variants)
+$primary:  mat-palette($mat-red);
+$accent: mat-palette($mat-amber);
+$warn: mat-palette($mat-yellow);
+
+//Define a theme using the above palettes
+$theme: mat-dark-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+html {
+  background-color: black;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Raleway, "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+.stdPadding {
+    padding: 1em;
+}
+
+.stdMargin {
+  margin: 1em;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.picAsIcon {
+  width: 1em;
+}
+
+.name {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.blurb {
+  font-size: small;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+app-nav button {
+  :hover, :active {
+    color: mat-color($accent);
+  }
+}
+
+.active {
+  color: mat-color($accent);
+  :hover, :active {
+    color: mat-color($accent);
+  }
+}
+
+app-nav div {
+  overflow: hidden;
+}
+
+.navBar {
+  background-color: black;
+  padding: 0.5em;
+  z-index: 200;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.stuckToBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

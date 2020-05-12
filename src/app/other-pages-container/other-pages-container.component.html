@@ -1,0 +1,13 @@
+<div fxLayout="column" fxLayoutGap="1em" class="stdMargin">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.5em">
+        <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+        <span style="font-size: x-large;">{{title}}</span>
+    </div>
+    <div>
+        <ng-content></ng-content>
+    </div>
+</div>
+<div>
+    <app-nav [showHomeButton]="true" class="navBar stuckToBottom mat-elevation-z15"></app-nav>
+    <app-nav [showHomeButton]="true" class="navBar hidden"></app-nav>
+</div>

@@ -1,0 +1,20 @@
+<div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center center">
+    <button *ngIf="showHomeButton" mat-icon-button routerLinkActive="active" routerLink="/home" aria-label="Home">
+        <mat-icon>home_outline</mat-icon>
+    </button>
+    <button mat-icon-button routerLinkActive="active" routerLink="/experience" aria-label="Experience">
+        <mat-icon>work_outline</mat-icon>
+    </button>
+    <button mat-icon-button routerLinkActive="active" routerLink="/education" aria-label="Education">
+        <mat-icon>book_outline</mat-icon>
+    </button>
+    <button mat-icon-button routerLinkActive="active" routerLink="/projects" aria-label="Projects">
+        <mat-icon>code_outline</mat-icon>
+    </button>
+    <button mat-icon-button routerLinkActive="active" routerLink="/skills" aria-label="Skills">
+        <mat-icon>emoji_symbols</mat-icon>
+    </button>
+    <button mat-icon-button routerLinkActive="active" routerLink="/contact" aria-label="Contact">
+        <mat-icon>perm_identity</mat-icon>
+    </button>
+</div>
