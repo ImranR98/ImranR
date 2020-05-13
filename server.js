@@ -9,5 +9,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-	console.log(`ImranR-Resume started on port ${port}.`)
+	console.log(`Serving ImranR-Resume on port ${port}.`)
 })
