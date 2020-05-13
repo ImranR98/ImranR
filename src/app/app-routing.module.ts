@@ -5,7 +5,6 @@ import { ExperienceComponent } from './experience/experience.component'
 import { EducationComponent } from './education/education.component'
 import { ProjectsComponent } from './projects/projects.component'
 import { SkillsComponent } from './skills/skills.component'
-import { ContactComponent } from './contact/contact.component'
 import { AboutComponent } from './about/about.component'
 
 
@@ -34,10 +33,6 @@ const routes: Routes = [
   {
     path: 'skills',
     component: SkillsComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
   },
   {
     path: 'about',

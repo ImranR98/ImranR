@@ -1,13 +1,33 @@
-<div fxLayout="column" fxLayoutGap="1em" class="stdMargin">
-    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.5em">
-        <mat-icon *ngIf="icon">{{icon}}</mat-icon>
-        <span style="font-size: x-large;">{{title}}</span>
+<div fxLayout="column" class="stdMargin">
+    <div fxLayout="column" class="navBar stuckToTop mat-elevation-z15">
+        <div fxLayout="row" fxLayoutGap="0.5em" class="stdMargin" fxLayoutAlign="start center">
+            <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+            <span style="font-size: x-large;">{{title}}</span>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+    <div fxLayout="column" class="navBar hidden">
+        <div fxLayout="row" fxLayoutGap="0.5em" class="stdMargin" fxLayoutAlign="start center">
+            <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+            <span style="font-size: x-large;">{{title}}</span>
+        </div>
+        <mat-divider></mat-divider>
     </div>
     <div>
         <ng-content></ng-content>
     </div>
 </div>
 <div>
-    <app-nav [showHomeButton]="true" class="navBar stuckToBottom mat-elevation-z15"></app-nav>
-    <app-nav [showHomeButton]="true" class="navBar hidden"></app-nav>
+    <div class="navBar stuckToBottom">
+        <mat-divider></mat-divider>
+        <div class="halfMargin">
+            <app-nav [showHomeButton]="true"></app-nav>
+        </div>
+    </div>
+    <div class="navBar hidden">
+        <mat-divider></mat-divider>
+        <div class="halfMargin">
+            <app-nav [showHomeButton]="true"></app-nav>
+        </div>
+    </div>
 </div>

@@ -33,12 +33,24 @@ body {
   margin: 1em;
 }
 
+.stdMarginTop {
+  margin-top: 1em;
+}
+
+.halfMargin {
+  margin: 0.5em;
+}
+
 .height100 {
   height: 100%;
 }
 
-.picAsIcon {
+.width1em {
   width: 1em;
+}
+
+.width1point4em {
+  width: 1.4em;
 }
 
 .name {
@@ -74,7 +86,6 @@ app-nav div {
 
 .navBar {
   background-color: black;
-  padding: 0.5em;
   z-index: 200;
 }
 
@@ -87,4 +98,51 @@ app-nav div {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.stuckToTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.xLargeText {
+  font-size: x-large;
+}
+
+.largeText {
+  font-size: large;
+}
+
+.smallText {
+  font-size: small;
+}
+
+.manulife {
+  color: mat-color(mat-palette($mat-green, 'A400'))
+}
+
+.seneca {
+  color: mat-color(mat-palette($mat-red, 400))
+}
+
+.almis {
+  color: mat-color(mat-palette($mat-indigo, 200))
+}
+
+.andika {
+  color: mat-color(mat-palette($mat-indigo, 'A100'))
+}
+
+.lipa {
+  color: mat-color(mat-palette($mat-pink, 'A100'))
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li:before {
+  content: " - ";
 }
