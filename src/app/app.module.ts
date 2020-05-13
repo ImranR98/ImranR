@@ -12,12 +12,13 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { NavComponent } from './nav/nav.component'
 import { ExperienceComponent } from './experience/experience.component'
-import { MatDividerModule } from '@angular/material/divider';
-import { OtherPagesContainerComponent } from './other-pages-container/other-pages-container.component';
-import { EducationComponent } from './education/education.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { SkillsComponent } from './skills/skills.component';
+import { MatDividerModule } from '@angular/material/divider'
+import { EducationComponent } from './education/education.component'
+import { ProjectsComponent } from './projects/projects.component'
+import { SkillsComponent } from './skills/skills.component'
 import { AboutComponent } from './about/about.component'
+import { StickyBarComponent } from './sticky-bar/sticky-bar.component';
+import { TitleComponent } from './title/title.component'
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { AboutComponent } from './about/about.component'
     HomeComponent,
     NavComponent,
     ExperienceComponent,
-    OtherPagesContainerComponent,
     EducationComponent,
     ProjectsComponent,
     SkillsComponent,
-    AboutComponent
+    AboutComponent,
+    StickyBarComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
