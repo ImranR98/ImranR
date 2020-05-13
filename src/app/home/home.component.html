@@ -1,20 +1,23 @@
 <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="space-between" class="height100 stdPadding">
     <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center" fxFlex="100%">
-        <div fxLayout="column" fxLayoutGap="0.3em" fxLayoutAlign="center center">
-            <span class="name">Imran Remtulla</span>
-            <span class="blurb">Toronto &nbsp; <img src='../../assets/ca.svg' class="width1em"> &nbsp; | &nbsp;
-                Software development
-                student with a passion for learning and an interest in Web and App development</span>
+        <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="end center" fxFlex="60%">
+            <div fxLayout="column" fxLayoutGap="0.3em" fxLayoutAlign="center center">
+                <span class="name">Imran Remtulla</span>
+                <span class="blurb">
+                    Toronto &nbsp;
+                    <img src='../../assets/ca.svg' class="width1em">
+                    &nbsp; | &nbsp;
+                    Software development student with a passion for learning and an interest in Web and App development
+                </span>
+            </div>
+            <app-nav [showHomeButton]="true"></app-nav>
         </div>
-        <app-nav [showHomeButton]="true"></app-nav>
-    </div>
-    <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="space-between">
-        <small><a routerLink="/about">About</a></small>
-        <div fxLayout="row" fxLayoutGap="1em">
+        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="center center" fxFlex="40%">
             <a href="https://github.com/ImranR98" target="_blank"><img src='../../assets/git.png' class="width1em"></a>
             <a href="https://www.linkedin.com/in/imran-remtulla-419564158/" target="_blank"><img
                     src='../../assets/link.png' class="width1em"></a>
             <a href="mailto:iremtulla15@gmail.com"><img src='../../assets/mail.png' class="width1em"></a>
         </div>
     </div>
+    <small><a routerLink="/about">About</a></small>
 </div>
