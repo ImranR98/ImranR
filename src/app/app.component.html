@@ -1,1 +1,6 @@
 <router-outlet></router-outlet>
+<app-sticky-bar *ngIf="!hideNav" [bottom]="true" [divider]="true">
+    <div class="halfMargin">
+        <app-nav [showHomeButton]="true"></app-nav>
+    </div>
+</app-sticky-bar>
