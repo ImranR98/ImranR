@@ -1,0 +1,148 @@
+//Importing Angular Material
+@import '~@angular/material/theming';
+
+//Define custom font to use with Material, then include it
+$custom-typography: mat-typography-config($font-family: "'Raleway', sans-serif;");
+@include mat-core($custom-typography);
+
+//Define custom color palettes for the App's primary, accent and warning colors (numbers indicate default, lighter and darker variants)
+$primary:  mat-palette($mat-red);
+$accent: mat-palette($mat-amber);
+$warn: mat-palette($mat-yellow);
+
+//Define a theme using the above palettes
+$theme: mat-dark-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+html {
+  background-color: black;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Raleway, "Helvetica Neue", sans-serif;
+  color: white;
+}
+
+.stdPadding {
+    padding: 1em;
+}
+
+.stdMargin {
+  margin: 1em;
+}
+
+.stdMarginTop {
+  margin-top: 1em;
+}
+
+.halfMargin {
+  margin: 0.5em;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.width1em {
+  width: 1em;
+}
+
+.width1point4em {
+  width: 1.4em;
+}
+
+.name {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.blurb {
+  font-size: small;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+app-nav button {
+  :hover, :active {
+    color: mat-color($accent);
+  }
+}
+
+.active {
+  color: mat-color($accent);
+  :hover, :active {
+    color: mat-color($accent);
+  }
+}
+
+app-nav div {
+  overflow: hidden;
+}
+
+.navBar {
+  background-color: black;
+  z-index: 200;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.stuckToBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stuckToTop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.xLargeText {
+  font-size: x-large;
+}
+
+.largeText {
+  font-size: large;
+}
+
+.smallText {
+  font-size: small;
+}
+
+.manulife {
+  color: mat-color(mat-palette($mat-green, 'A400'))
+}
+
+.seneca {
+  color: mat-color(mat-palette($mat-red, 400))
+}
+
+.almis {
+  color: mat-color(mat-palette($mat-indigo, 200))
+}
+
+.andika {
+  color: mat-color(mat-palette($mat-indigo, 'A100'))
+}
+
+.lipa {
+  color: mat-color(mat-palette($mat-pink, 'A100'))
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li:before {
+  content: " - ";
+}
