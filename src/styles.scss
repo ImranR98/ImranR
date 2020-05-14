@@ -68,16 +68,18 @@ a {
 }
 
 app-nav button {
-  :hover, :active {
+  @media (hover: hover) {
+    :hover {
+      color: mat-color($accent);
+    }
+  }
+  :active {
     color: mat-color($accent);
   }
 }
 
 .active {
   color: mat-color($accent);
-  :hover, :active {
-    color: mat-color($accent);
-  }
 }
 
 app-nav div {
