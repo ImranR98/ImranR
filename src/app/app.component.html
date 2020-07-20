@@ -1,4 +1,6 @@
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)" style="height: 100%;">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>
 <app-sticky-bar *ngIf="!hideNav" [bottom]="true" [divider]="true">
     <div class="halfMargin">
         <app-nav [showHomeButton]="true"></app-nav>
