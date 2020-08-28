@@ -27,6 +27,9 @@ const simpleHttpGet = (url) => {
 	})
 }
 
+// Get actual IPs behind NGINX instead of localhost
+app.set('trust proxy', true)
+
 // Add the IP of any requester to the recentRequests Set
 app.use((req, res, next) => {
 	let reqIP = req.ip
