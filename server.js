@@ -59,6 +59,7 @@ const logRequests = () => {
 				console.log(`${printNow()}: Request from ${ip} ${country ? `in ${country}.` : `.`}`)
 			}).catch(err => {
 				console.log(`${printNow()}: Request from ${ip}. Could not determine location.`)
+				console.log(err)
 			})
 		} else {
 			console.log(`${printNow()}: Request from localhost.`)
