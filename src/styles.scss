@@ -68,14 +68,36 @@ a {
 }
 
 app-nav button {
-  @media (hover: hover) {
-    :hover {
-      color: mat-color($accent);
-    }
+  :hover {
+    color: mat-color($accent);
   }
   :active {
     color: mat-color($accent);
   }
+}
+
+.linkedIn {
+  :hover {
+    filter: sepia(100%) saturate(40) hue-rotate(175deg);
+  }
+}
+
+.email {
+  :hover {
+    filter: sepia(100%) saturate(10) hue-rotate(290deg);
+  }  
+}
+
+.medium {
+  :hover {
+    filter: sepia(100%) saturate(1.7) hue-rotate(40deg);
+  }  
+}
+
+.github {
+  :hover {
+    filter: sepia(100%) saturate(3);
+  }  
 }
 
 .active {
