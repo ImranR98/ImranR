@@ -1,180 +1,75 @@
-//Importing Angular Material
-@import '~@angular/material/theming';
+// Angular Material Theme Imports
+@import "~@angular/material/theming";
+@include mat-core();
 
-//Define custom font to use with Material, then include it
-$custom-typography: mat-typography-config($font-family: "'Raleway', sans-serif;");
-@include mat-core($custom-typography);
-
-//Define custom color palettes for the App's primary, accent and warning colors (numbers indicate default, lighter and darker variants)
-$primary:  mat-palette($mat-red);
-$accent: mat-palette($mat-amber);
-$warn: mat-palette($mat-yellow);
-
-//Define a theme using the above palettes
-$theme: mat-dark-theme($primary, $accent, $warn);
-
-@include angular-material-theme($theme);
-html {
-  background-color: black;
+// Font Import
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto.ttf) format("truetype");
 }
 
-html, body { height: 100%; }
+// Angular Material Theme Variables
+$primary-mat-color: mat-palette($mat-indigo);
+$accent-mat-color: mat-palette($mat-pink);
+$warning-mat-color: mat-palette($mat-red);
+$light-mat-theme: mat-light-theme(
+  (
+    color: (
+      primary: $primary-mat-color,
+      accent: $accent-mat-color,
+      warning: $warning-mat-color
+    ),
+  )
+);
+$dark-mat-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $primary-mat-color,
+      accent: $accent-mat-color,
+      warning: $warning-mat-color
+    ),
+  )
+);
+
+// Other Variables
+$dark-theme-background: #2c2c2c;
+$dark-theme-text: #ffffff;
+
+// Light Theme Specific Rules
+@media (prefers-color-scheme: light) {
+  @include angular-material-theme($light-mat-theme);
+}
+
+// Dark Theme Specific Rules
+@media (prefers-color-scheme: dark) {
+  @include angular-material-color($dark-mat-theme);
+
+  html,
+  body {
+    background-color: $dark-theme-background !important;
+    color: $dark-theme-text !important;
+  }
+}
+
+// All Other Rules
+html,
 body {
-  margin: 0;
-  font-family: Raleway, "Helvetica Neue", sans-serif;
-  color: white;
-}
-
-.stdPadding {
-    padding: 1em;
-}
-
-.stdMargin {
-  margin: 1em;
-}
-
-.stdMarginTop {
-  margin-top: 1em;
-}
-
-.halfMargin {
-  margin: 0.5em;
-}
-
-.height100 {
   height: 100%;
 }
 
-.width1em {
-  width: 1em;
-}
-
-.width1point4em {
-  width: 1.4em;
-}
-
-.name {
-  font-size: xx-large;
-  text-align: center;
-}
-
-.blurb {
-  font-size: small;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 a {
   color: inherit;
 }
 
-app-nav button {
-  :hover {
-    color: mat-color($accent);
-  }
-  :active {
-    color: mat-color($accent);
-  }
+.stdPadding {
+  padding: 1em !important;
 }
 
-.linkedIn {
-  :hover {
-    filter: sepia(100%) saturate(40) hue-rotate(175deg);
-  }
-}
-
-.email {
-  :hover {
-    filter: sepia(100%) saturate(10) hue-rotate(290deg);
-  }  
-}
-
-.medium {
-  :hover {
-    filter: sepia(100%) saturate(1.7) hue-rotate(40deg);
-  }  
-}
-
-.github {
-  :hover {
-    filter: sepia(100%) saturate(3);
-  }  
-}
-
-.active {
-  color: mat-color($accent);
-}
-
-app-nav div {
-  overflow: hidden;
-}
-
-.navBar {
-  background-color: black;
-  z-index: 200;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.stuckToBottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.stuckToTop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.xLargeText {
-  font-size: x-large;
-}
-
-.largeText {
-  font-size: large;
-}
-
-.smallText {
-  font-size: small;
-}
-
-.manulife {
-  color: mat-color(mat-palette($mat-green, 'A400'))
-}
-
-.seneca {
-  color: mat-color(mat-palette($mat-red, 400))
-}
-
-.almis {
-  color: mat-color(mat-palette($mat-indigo, 200))
-}
-
-.andika {
-  color: mat-color(mat-palette($mat-indigo, 'A100'))
-}
-
-.lipa {
-  color: mat-color(mat-palette($mat-pink, 'A100'))
-}
-
-.tuma {
-  color: mat-color(mat-palette($mat-red, 400))
-}
-
-.ryerson {
-  color: mat-color(mat-palette($mat-yellow, 400))
-}
-
-ul {
-  list-style-type: none;
-}
-
-ul > li:before {
-  content: " - ";
+.fillHeight {
+  height: 100vh;
 }
