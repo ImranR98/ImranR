@@ -1,65 +1,141 @@
-// Angular Material Theme Imports
 @import "~@angular/material/theming";
 @include mat-core();
 
-// Font Import
 @font-face {
-  font-family: "Roboto";
-  src: local("Roboto"), url(./assets/fonts/Roboto.ttf) format("truetype");
+  font-family: "Manrope";
+  src: local("Manrope"), url(./assets/fonts/Manrope.ttf) format("truetype");
 }
 
-// Angular Material Theme Variables
-$primary-mat-color: mat-palette($mat-indigo);
-$accent-mat-color: mat-palette($mat-pink);
-$warning-mat-color: mat-palette($mat-red);
-$light-mat-theme: mat-light-theme(
+$primary-mat-color: (
+  Main: #0f2060,
+  Light: #44478e,
+  Dark: #000036,
+  contrast: (
+    Main: #fff,
+    Light: #fff,
+    Dark: #fff,
+  ),
+);
+$accent-mat-color: (
+  Main: #ff9100,
+  Light: #ffc246,
+  Dark: #c56200,
+  contrast: (
+    Main: #000,
+    Light: #000,
+    Dark: #000,
+  ),
+);
+
+$primary-mat-palette: mat-palette($primary-mat-color, Main, Light, Dark);
+$accent-mat-palette: mat-palette($accent-mat-color, Main, Light, Dark);
+$warning-mat-palette: mat-palette($mat-red);
+
+$mat-theme: mat-dark-theme(
   (
     color: (
-      primary: $primary-mat-color,
-      accent: $accent-mat-color,
-      warning: $warning-mat-color
+      primary: $primary-mat-palette,
+      accent: $accent-mat-palette,
+      warning: $warning-mat-palette,
     ),
   )
 );
-$dark-mat-theme: mat-dark-theme(
-  (
-    color: (
-      primary: $primary-mat-color,
-      accent: $accent-mat-color,
-      warning: $warning-mat-color
-    ),
-  )
-);
 
-// Other Variables
-$dark-theme-background: #2c2c2c;
-$dark-theme-text: #ffffff;
+@include angular-material-theme($mat-theme);
 
-// Light Theme Specific Rules
-@media (prefers-color-scheme: light) {
-  @include angular-material-theme($light-mat-theme);
-}
-
-// Dark Theme Specific Rules
-@media (prefers-color-scheme: dark) {
-  @include angular-material-color($dark-mat-theme);
-
-  html,
-  body {
-    background-color: $dark-theme-background !important;
-    color: $dark-theme-text !important;
-  }
-}
-
-// All Other Rules
 html,
 body {
   height: 100%;
+  background-color: mat-color($primary-mat-color, Dark);
+  color: white;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Manrope, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@mixin topBarExtended($true) {
+  @if $true {
+    padding-top: 1.7em;
+    padding-bottom: 1.7em;
+    box-shadow: none !important;
+  } @else {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  }
+}
+@keyframes topBarScroll {
+  from {
+    @include topBarExtended(true);
+  }
+  to {
+    @include topBarExtended(false);
+  }
+}
+
+@keyframes topBarUnScroll {
+  from {
+    @include topBarExtended(false);
+  }
+  to {
+    @include topBarExtended(true);
+  }
+}
+
+.sticky {
+  position: fixed;
+}
+
+.topBar {
+  @include topBarExtended(true);
+  animation-name: topBarUnScroll;
+  animation-duration: 0.4s;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: bold;
+  background-color: mat-color($primary-mat-color, Main);
+  &.scroll {
+    @include topBarExtended(false);
+    animation-name: topBarScroll;
+    animation-duration: 0.4s;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.accentedText {
+  color: mat-color($accent-mat-color, Main);
+}
+
+.lightBackground {
+  background-color: mat-color($primary-mat-color, Main);
+}
+
+.about {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.me {
+  border: 0.5em solid mat-color($primary-mat-color, Dark);
+  border-radius: 100%;
+  width: 10em;
 }
 
 a {
@@ -72,4 +148,32 @@ a {
 
 .fillHeight {
   height: 100vh;
+}
+
+@mixin hidden($true) {
+  @if $true {
+    display: none;
+    opacity: 0%;
+  } @else {
+    display: contents;
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    @include hidden(true);
+  }
+  to {
+    @include hidden(false);
+  }
+}
+
+.hidden {
+  @include hidden(true)
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
 }

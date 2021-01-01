@@ -1,3 +1,17 @@
-<div fxLayout="column" fxLayoutGap="1em" class="stdPadding fillHeight">
-    <span>Home</span>
+<div class="fillHeight" [ngClass]="{ 'fadeIn': imageLoaded, 'hidden': !imageLoaded }">
+    <app-top-bar></app-top-bar>
+    <div fxLayout="column" fxLayoutGap="1em" class="fillHeight">
+        <div class="about lightBackground" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em" fxLayoutGap.lt-sm="1em" fxLayoutAlign="center center">
+            <img src="../../assets/images/me.png" class="me" (load)="loaded()">
+            <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
+        </div>
+        <p>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT
+            <br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT
+            <br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT<br>TTT
+            <br>TTT<br>TTT<br>TTT<br>TTT<br>TTT
+        </p>
+    </div>
+</div>
+<div *ngIf="!imageLoaded" class="fillHeight stdPadding" fxLayout="column" fxLayoutAlign="center center">
+    <mat-spinner color="accent"></mat-spinner>
 </div>
