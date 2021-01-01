@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -13,14 +13,24 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.scroll, true);
+    document.getElementsByClassName('menuOverlay')[0]?.classList.add('hidden')
+    setTimeout(() => {
+      document.getElementsByClassName('menuOverlay')[0]?.classList.remove('hidden')
+    }, 1000)
   }
 
   scroll() {
     if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-      document.getElementsByClassName('topBar')[0].classList.add('scroll')
+      document.getElementsByClassName('topBar')[0]?.classList.add('scroll')
     } else {
-      document.getElementsByClassName('topBar')[0].classList.remove('scroll')
+      document.getElementsByClassName('topBar')[0]?.classList.remove('scroll')
     }
+  }
+
+  toggleMenu(show: boolean) {
+    let element = document.getElementsByClassName('menuOverlay')[0]
+    if (show) element.classList.add('show')
+    else element.classList.remove('show')
   }
 
 }

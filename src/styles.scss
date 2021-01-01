@@ -48,6 +48,7 @@ body {
   height: 100%;
   background-color: mat-color($primary-mat-color, Dark);
   color: white;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,7 +68,7 @@ p {
 
 @mixin topBarExtended($true) {
   @if $true {
-    padding-top: 1.7em;
+    padding-top: 1.5em;
     padding-bottom: 1.7em;
     box-shadow: none !important;
   } @else {
@@ -101,7 +102,7 @@ p {
 .topBar {
   @include topBarExtended(true);
   animation-name: topBarUnScroll;
-  animation-duration: 0.4s;
+  animation-duration: 0.2s;
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
@@ -110,19 +111,19 @@ p {
   &.scroll {
     @include topBarExtended(false);
     animation-name: topBarScroll;
-    animation-duration: 0.4s;
+    animation-duration: 0.2s;
   }
   a {
     text-decoration: none;
+    transition: 0.1s linear; 
+    &:hover {
+      color: mat-color($accent-mat-color, Main);
+      transition: 0.1s linear; 
+    }
   }
 }
-
 .accentedText {
   color: mat-color($accent-mat-color, Main);
-}
-
-.lightBackground {
-  background-color: mat-color($primary-mat-color, Main);
 }
 
 .about {
@@ -130,6 +131,10 @@ p {
   padding-bottom: 3em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.lightBackground {
+  background-color: mat-color($primary-mat-color, Main);
 }
 
 .me {
@@ -155,7 +160,7 @@ a {
     display: none;
     opacity: 0%;
   } @else {
-    display: contents;
+    display: static;
     opacity: 100%;
   }
 }
@@ -170,10 +175,63 @@ a {
 }
 
 .hidden {
-  @include hidden(true)
+  @include hidden(true);
 }
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: 0.4s;
+  animation-duration: 0.2s;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@mixin menuShown($true) {
+  @if $true {
+    right: 0px;
+  } @else {
+    right: -100vw;
+  }
+}
+@keyframes hideMenu {
+  from {
+    @include menuShown(true);
+  }
+  to {
+    @include menuShown(false);
+  }
+}
+
+@keyframes showMenu {
+  from {
+    @include menuShown(false);
+  }
+  to {
+    @include menuShown(true);
+  }
+}
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: mat-color($primary-mat-color, Main);
+  font-weight: bold;
+  @include menuShown(false);
+  animation-name: hideMenu;
+  animation-duration: 0.2s;
+  &.show {
+    @include menuShown(true);
+    animation-name: showMenu;
+    animation-duration: 0.2s;
+  }
+  a {
+    text-decoration: none;
+    transition: 0.1s linear; 
+    &:hover {
+      color: mat-color($accent-mat-color, Main);
+      transition: 0.1s linear; 
+    }
+  }
 }

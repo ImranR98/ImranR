@@ -1,5 +1,5 @@
 <div #topBar fxLayout="row" fxLayoutGap="1em" class="topBar sticky" fxLayoutAlign="space-between center">
-    <span>Imran<span class="accentedText">R</span></span>
+    <span class="topBarTitle" >Imran<span class="accentedText">R</span></span>
     <div fxLayout="row" fxLayoutGap="2em" fxShow fxHide.lt-sm>
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -7,5 +7,25 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
     </div>
+    <div fxHide fxShow.lt-sm>
+        <button mat-icon-button (click)="toggleMenu(true)">
+            <mat-icon svgIcon="menu"></mat-icon>
+        </button>
+    </div>
 </div>
 <div style="height: 4em;" class="lightBackground"></div>
+
+<div class="menuOverlay stdPadding" fxLayout="column" fxLayoutGap="1em">
+    <div fxLayout="row" fxLayoutAlign="end">
+        <button mat-icon-button (click)="toggleMenu(false)">
+            <mat-icon svgIcon="close"></mat-icon>
+        </button>
+    </div>
+    <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center" class="fillHeight">
+        <a href="#about" (click)="toggleMenu(false)">About</a>
+        <a href="#work" (click)="toggleMenu(false)">Work</a>
+        <a href="#studies" (click)="toggleMenu(false)">Studies</a>
+        <a href="#projects" (click)="toggleMenu(false)">Projects</a>
+        <a href="#skills" (click)="toggleMenu(false)">Skills</a>
+    </div>
+</div>

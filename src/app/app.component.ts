@@ -21,8 +21,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.matIconRegistry.addSvgIcon(
-      "cancel",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/cancel.svg")
+      "menu",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/menu.svg")
+    )
+    this.matIconRegistry.addSvgIcon(
+      "close",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/close.svg")
     )
   }
 }
