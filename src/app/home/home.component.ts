@@ -23,7 +23,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    setTimeout(() => { // If X seconds go by w/o image load, show the page anyways
+      if (!this.imageLoaded) this.loaded()
+    }, 1000)
+   }
 
   async typewriteDescriptions() {
     this.caretHeartbeat()
