@@ -100,14 +100,14 @@ p {
 }
 
 .topBar {
-  @include topBarExtended(true);
-  animation-name: topBarUnScroll;
-  animation-duration: 0.2s;
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
   font-weight: bold;
   background-color: mat-color($primary-mat-color, Main);
+  @include topBarExtended(true);
+  animation-name: topBarUnScroll;
+  animation-duration: 0.2s;
   &.scroll {
     @include topBarExtended(false);
     animation-name: topBarScroll;
@@ -126,11 +126,52 @@ p {
   color: mat-color($accent-mat-color, Main);
 }
 
+@mixin aboutExtended($true) {
+  @if $true {
+    height: calc(100vh - 4em);
+  } @else {
+    height: 25em;
+  }
+}
+@keyframes aboutScroll {
+  from {
+    @include aboutExtended(true);
+  }
+  to {
+    @include aboutExtended(false);
+  }
+}
+
+@keyframes aboutUnScroll {
+  from {
+    @include aboutExtended(false);
+  }
+  to {
+    @include aboutExtended(true);
+  }
+}
+
 .about {
   padding-top: 3em;
   padding-bottom: 3em;
   padding-left: 1em;
   padding-right: 1em;
+  .onlyExtended {
+    opacity: 100%;
+    transition: 2s linear;
+  }
+  @include aboutExtended(true);
+  animation-name: aboutUnScroll;
+  animation-duration: 0.4s;
+  &.scroll {
+    @include aboutExtended(false);
+    animation-name: aboutScroll;
+    animation-duration: 0.4s;
+    .onlyExtended {
+      opacity: 0%;
+      transition: 0.4s linear;
+    }
+  }
 }
 
 .lightBackground {
@@ -251,3 +292,19 @@ a {
   height: 4em;
   margin: -4em 0 0;
 }
+
+
+.floating {   
+  animation-name: floating; 
+  animation-duration: 3s; 
+  animation-iteration-count: infinite; 
+  animation-timing-function: ease-in-out; 
+  margin-left: 30px; 
+  margin-top: 5px; 
+} 
+
+@keyframes floating { 
+  0% { transform: translate(0,  0px); } 
+  50%  { transform: translate(0, 15px); } 
+  100%   { transform: translate(0, -0px); }     
+} 

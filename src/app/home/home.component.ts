@@ -27,6 +27,15 @@ export class HomeComponent implements OnInit {
     setTimeout(() => { // If X seconds go by w/o image load, show the page anyways
       if (!this.imageLoaded) this.loaded()
     }, 5000)
+    window.addEventListener('scroll', this.scroll, true);
+  }
+
+  scroll() {
+    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+      document.getElementsByClassName('about')[0]?.classList.add('scroll')
+    } else {
+      document.getElementsByClassName('about')[0]?.classList.remove('scroll')
+    }
   }
 
   async typewriteDescriptions() {

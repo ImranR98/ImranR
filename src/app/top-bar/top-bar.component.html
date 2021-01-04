@@ -1,11 +1,11 @@
 <div #topBar fxLayout="row" fxLayoutGap="1em" class="topBar sticky" fxLayoutAlign="space-between center">
     <span class="stdPaddingVertical">Imran<span class="accentedText">R</span></span>
     <div fxLayout="row" fxLayoutGap="2em" fxShow fxHide.lt-sm>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#studies">Studies</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a routerLink="" (click)="navigate($event, 'about')">About</a>
+        <a routerLink="" (click)="navigate($event, 'work')">Work</a>
+        <a routerLink="" (click)="navigate($event, 'studies')">Studies</a>
+        <a routerLink="" (click)="navigate($event, 'projects')">Projects</a>
+        <a routerLink="" (click)="navigate($event, 'skills')">Skills</a>
     </div>
     <button mat-icon-button fxHide fxShow.lt-sm (click)="toggleMenu(true)">
         <mat-icon svgIcon="menu" (click)="toggleMenu(true)"></mat-icon>
@@ -20,10 +20,10 @@
         </button>
     </div>
     <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center" class="fillHeight">
-        <a href="#about" (click)="toggleMenu(false)">About</a>
-        <a href="#work" (click)="toggleMenu(false)">Work</a>
-        <a href="#studies" (click)="toggleMenu(false)">Studies</a>
-        <a href="#projects" (click)="toggleMenu(false)">Projects</a>
-        <a href="#skills" (click)="toggleMenu(false)">Skills</a>
+        <a routerLink="" (click)="navigate($event, 'about'); toggleMenu(false)" >About</a>
+        <a routerLink="" (click)="navigate($event, 'work'); toggleMenu(false)" >Work</a>
+        <a routerLink="" (click)="navigate($event, 'studies'); toggleMenu(false)" >Studies</a>
+        <a routerLink="" (click)="navigate($event, 'projects'); toggleMenu(false)" >Projects</a>
+        <a routerLink="" (click)="navigate($event, 'skills'); toggleMenu(false)" >Skills</a>
     </div>
 </div>

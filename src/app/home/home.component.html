@@ -1,14 +1,20 @@
 <div id="about" class="fillHeight" [ngClass]="{ 'fadeIn': imageLoaded, 'hidden': !imageLoaded }">
     <app-top-bar></app-top-bar>
     <div fxLayout="column">
-        <div class="about lightBackground" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em"
-            fxLayoutGap.lt-sm="1em" fxLayoutAlign="center center">
-            <img src="../../assets/images/me.png" class="me" (load)="loaded()">
-            <div fxLayout="column" fxLayoutGap="1em">
-                <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
-                <small>I'm {{descriptionString}}<span class="accentedText bold">{{showCaret || overrideShowCaret ? '|' :
-                        ''}}</span></small>
+        <div class="about lightBackground" fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em" fxLayoutGap.lt-sm="1em"
+                fxLayoutAlign="center center" fxFlex="100%">
+                <img src="../../assets/images/me.png" class="me" (load)="loaded()">
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
+                    <small>I'm {{descriptionString}}<span class="accentedText bold">{{showCaret || overrideShowCaret ?
+                            '|' :
+                            ''}}</span></small>
+                </div>
             </div>
+            <span class="onlyExtended floating">
+                <mat-icon svgIcon="down"></mat-icon>
+            </span>
         </div>
         <div id="work" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
             <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign.lt-sm="center center">

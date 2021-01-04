@@ -28,5 +28,9 @@ export class AppComponent implements OnInit {
       "close",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/close.svg")
     )
+    this.matIconRegistry.addSvgIcon(
+      "down",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/down.svg")
+    )
   }
 }
