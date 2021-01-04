@@ -48,7 +48,7 @@ export class TopBarComponent implements OnInit {
     if (element) {
       if (!document.getElementsByClassName('topBar')[0]?.classList.contains('scroll')) {
         window.scrollBy({ top: 10 })
-        await this.sleep(400)
+        await this.sleep(500)
       }
       const offset = 50
       const bodyRect = document.body.getBoundingClientRect().top
