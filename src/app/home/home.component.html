@@ -1,6 +1,6 @@
 <div id="about" class="fillHeight" [ngClass]="{ 'fadeIn': imageLoaded, 'hidden': !imageLoaded }">
     <app-top-bar></app-top-bar>
-    <div fxLayout="column" fxLayoutGap="1em">
+    <div fxLayout="column">
         <div class="about lightBackground" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em"
             fxLayoutGap.lt-sm="1em" fxLayoutAlign="center center">
             <img src="../../assets/images/me.png" class="me" (load)="loaded()">
@@ -10,21 +10,37 @@
                         ''}}</span></small>
             </div>
         </div>
-        <div id="work" fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
-
+        <div id="work" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
+            <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign.lt-sm="center center">
+                <h1>Work</h1>
+                <span>Longer subtitle goes here.</span>
+                <div class="placeholder"></div>
+            </div>
         </div>
-        <div id="studies" fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
-
+        <mat-divider></mat-divider>
+        <div id="studies" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
+            <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign.lt-sm="center center">
+                <h1>Studies</h1>
+                <span>Longer subtitle goes here.</span>
+                <div class="placeholder"></div>
+            </div>
         </div>
-        <div id="projects" fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
-
+        <mat-divider></mat-divider>
+        <div id="projects" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
+            <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign.lt-sm="center center">
+                <h1>Projects</h1>
+                <span>Longer subtitle goes here.</span>
+                <div class="placeholder"></div>
+            </div>
         </div>
-        <div id="skills" fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center">
-
+        <mat-divider></mat-divider>
+        <div id="skills" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
+            <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign.lt-sm="center center">
+                <h1>Skills</h1>
+                <span>Longer subtitle goes here.</span>
+                <div class="placeholder"></div>
+            </div>
         </div>
-    </div>
-    <div class="stdPadding">
-        <h1>Work</h1>
     </div>
 </div>
 <div *ngIf="!imageLoaded" class="fillHeight stdPadding" fxLayout="column" fxLayoutAlign="center center">

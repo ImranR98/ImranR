@@ -68,12 +68,12 @@ p {
 
 @mixin topBarExtended($true) {
   @if $true {
-    padding-top: 1.5em;
-    padding-bottom: 1.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.7em;
     box-shadow: none !important;
   } @else {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0em;
+    padding-bottom: 0em;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
   }
 }
@@ -115,10 +115,10 @@ p {
   }
   a {
     text-decoration: none;
-    transition: 0.1s linear; 
+    transition: 0.1s linear;
     &:hover {
       color: mat-color($accent-mat-color, Main);
-      transition: 0.1s linear; 
+      transition: 0.1s linear;
     }
   }
 }
@@ -149,6 +149,11 @@ a {
 
 .stdPadding {
   padding: 1em !important;
+}
+
+.stdPaddingVertical {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .fillHeight {
@@ -228,10 +233,21 @@ a {
   }
   a {
     text-decoration: none;
-    transition: 0.1s linear; 
+    transition: 0.1s linear;
     &:hover {
       color: mat-color($accent-mat-color, Main);
-      transition: 0.1s linear; 
+      transition: 0.1s linear;
     }
   }
+}
+
+.placeholder {
+  height: 15em !important;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 4em;
+  margin: -4em 0 0;
 }

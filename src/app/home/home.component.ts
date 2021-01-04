@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => { // If X seconds go by w/o image load, show the page anyways
       if (!this.imageLoaded) this.loaded()
-    }, 1000)
-   }
+    }, 5000)
+  }
 
   async typewriteDescriptions() {
     this.caretHeartbeat()
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
           this.descriptionString = this.descriptionString.slice(0, this.descriptionString.length - 1)
           await this.sleep(20)
         }
+        this.descriptionString = ''
         this.overrideShowCaret = false
       }
     }
@@ -59,8 +60,10 @@ export class HomeComponent implements OnInit {
   }
 
   loaded() {
-    this.imageLoaded = true
-    this.typewriteDescriptions()
+    if (!this.imageLoaded) {
+      this.imageLoaded = true
+      this.typewriteDescriptions()
+    }
   }
 
   descriptions = [

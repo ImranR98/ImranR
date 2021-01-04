@@ -1,5 +1,5 @@
 <div #topBar fxLayout="row" fxLayoutGap="1em" class="topBar sticky" fxLayoutAlign="space-between center">
-    <span class="topBarTitle" >Imran<span class="accentedText">R</span></span>
+    <span class="stdPaddingVertical">Imran<span class="accentedText">R</span></span>
     <div fxLayout="row" fxLayoutGap="2em" fxShow fxHide.lt-sm>
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -7,11 +7,9 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
     </div>
-    <div fxHide fxShow.lt-sm>
-        <button mat-icon-button (click)="toggleMenu(true)">
-            <mat-icon svgIcon="menu"></mat-icon>
-        </button>
-    </div>
+    <button mat-icon-button fxHide fxShow.lt-sm (click)="toggleMenu(true)">
+        <mat-icon svgIcon="menu" (click)="toggleMenu(true)"></mat-icon>
+    </button>
 </div>
 <div style="height: 4em;" class="lightBackground"></div>
 

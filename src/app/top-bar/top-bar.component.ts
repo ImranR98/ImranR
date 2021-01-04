@@ -32,5 +32,4 @@ export class TopBarComponent implements OnInit {
     if (show) element.classList.add('show')
     else element.classList.remove('show')
   }
-
 }
