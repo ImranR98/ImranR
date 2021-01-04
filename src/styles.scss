@@ -115,10 +115,10 @@ p {
   }
   a {
     text-decoration: none;
-    transition: 0.1s linear;
+    transition: 0.1s ease;
     &:hover {
       color: mat-color($accent-mat-color, Main);
-      transition: 0.1s linear;
+      transition: 0.1s ease;
     }
   }
 }
@@ -158,7 +158,7 @@ p {
   padding-right: 1em;
   .onlyExtended {
     opacity: 100%;
-    transition: 2s linear;
+    transition: 1s ease;
   }
   @include aboutExtended(true);
   animation-name: aboutUnScroll;
@@ -169,7 +169,7 @@ p {
     animation-duration: 0.4s;
     .onlyExtended {
       opacity: 0%;
-      transition: 0.4s linear;
+      transition: 0.4s ease;
     }
   }
 }
@@ -274,10 +274,10 @@ a {
   }
   a {
     text-decoration: none;
-    transition: 0.1s linear;
+    transition: 0.1s ease;
     &:hover {
       color: mat-color($accent-mat-color, Main);
-      transition: 0.1s linear;
+      transition: 0.1s ease;
     }
   }
 }
@@ -292,7 +292,6 @@ a {
   height: 4em;
   margin: -4em 0 0;
 }
-
 
 .floating {   
   animation-name: floating; 

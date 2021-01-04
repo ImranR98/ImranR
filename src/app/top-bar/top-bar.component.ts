@@ -43,22 +43,25 @@ export class TopBarComponent implements OnInit {
   }
 
   async navigate(e: Event, target: string) {
-    e.preventDefault()
-    const element = document.getElementById(target)
-    if (element) {
-      if (!document.getElementsByClassName('topBar')[0]?.classList.contains('scroll')) {
-        window.scrollBy({ top: 10 })
-        await this.sleep(500)
+    let exception = (!document.getElementsByClassName('topBar')[0]?.classList.contains('scroll') && target == 'about')
+    if (!exception) {
+      e.preventDefault()
+      const element = document.getElementById(target)
+      if (element) {
+        if (!document.getElementsByClassName('topBar')[0]?.classList.contains('scroll')) {
+          window.scrollBy({ top: 10 })
+          await this.sleep(500)
+        }
+        const offset = 50
+        const bodyRect = document.body.getBoundingClientRect().top
+        const elementRect = element.getBoundingClientRect().top
+        const elementPosition = elementRect - bodyRect
+        const offsetPosition = elementPosition - offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
       }
-      const offset = 50
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
     }
   }
 }
