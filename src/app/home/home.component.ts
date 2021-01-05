@@ -5,7 +5,8 @@ TODO:
 - Add Skills
 - Add Social icons in About
 - Integrate # anchor tags if possible
-- Try to organize CSS
+- Separate sections into components for maintainability
+- Try to organize CSS (for maintainability and to possibly reduce repetition)
 - Add more lines (and improve existing ones) in description array
 */
 
