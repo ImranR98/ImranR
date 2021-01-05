@@ -61,7 +61,8 @@ h2,
 h3,
 h4,
 h5,
-p {
+p,
+ul {
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -100,6 +101,7 @@ p {
 }
 
 .topBar {
+  z-index: 5;
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
@@ -258,6 +260,7 @@ a {
   }
 }
 .menuOverlay {
+  z-index: 10;
   position: fixed;
   top: 0;
   height: 100vh;
@@ -283,7 +286,7 @@ a {
 }
 
 .placeholder {
-  height: 15em !important;
+  min-height: 15em !important;
 }
 
 :target:before {
@@ -293,17 +296,64 @@ a {
   margin: -4em 0 0;
 }
 
-.floating {   
-  animation-name: floating; 
-  animation-duration: 3s; 
-  animation-iteration-count: infinite; 
-  animation-timing-function: ease-in-out; 
-  margin-left: 30px; 
-  margin-top: 5px; 
-} 
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
 
-@keyframes floating { 
-  0% { transform: translate(0,  0px); } 
-  50%  { transform: translate(0, 15px); } 
-  100%   { transform: translate(0, -0px); }     
-} 
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+@mixin invisible($true) {
+  @if $true {
+    opacity: 0%;
+  } @else {
+    opacity: 100%;
+  }
+}
+@keyframes show {
+  from {
+    @include invisible(true);
+  }
+  to {
+    @include invisible(false);
+  }
+}
+
+@keyframes hide {
+  from {
+    @include invisible(false);
+  }
+  to {
+    @include invisible(true);
+  }
+}
+.fadeIntoView {
+  @include invisible(true);
+  animation-name: hide;
+  animation-duration: 1s;
+  &.show {
+    @include invisible(false);
+    animation-name: show;
+    animation-duration: 1s;
+  }
+}
+
+.logo {
+  border: 0.5em solid mat-color($primary-mat-color, Main);
+  border-radius: 100%;
+  width: 5em;
+}

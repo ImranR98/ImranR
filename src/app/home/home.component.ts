@@ -1,4 +1,13 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+/*
+TODO:
+- Add Skills
+- Add Social icons in About
+- Integrate # anchor tags if possible
+- Try to organize CSS
+- Add more lines (and improve existing ones) in description array
+*/
 
 @Component({
   selector: 'app-home',
@@ -23,12 +32,31 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  fadeIntoView(target: Element) {
+    const options = {
+      threshold: 0.5
+    }
+    let observer = new IntersectionObserver((intersection) => {
+      console.log(intersection)
+      if (intersection[0]?.isIntersecting || intersection[0]?.boundingClientRect.y < 0) target.classList.add('show')
+      else target.classList.remove('show')
+    }, options)
+    observer.observe(target)
+  }
+
   ngOnInit(): void {
     setTimeout(() => { // If X seconds go by w/o image load, show the page anyways
       if (!this.imageLoaded) this.loaded()
     }, 5000)
-    window.addEventListener('scroll', this.scroll, true);
+    window.addEventListener('scroll', this.scroll, true)
+
+    let fadeIntoViewElements = document.getElementsByClassName('fadeIntoView')
+    for (let i = 0; i < fadeIntoViewElements.length; i++) {
+      this.fadeIntoView(fadeIntoViewElements[i])
+    }
   }
+
+
 
   scroll() {
     if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
