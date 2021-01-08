@@ -30,15 +30,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(media: MediaObserver) {
     this.subscriptions.push(media.asObservable().subscribe((change: MediaChange[]) => {
       if (change[0].mqAlias == 'xs') {
-        this.columnNum = 3
+        this.columnNum = 2
       } else if (change[0].mqAlias == 'sm') {
-        this.columnNum = 6
+        this.columnNum = 5
       } else if (change[0].mqAlias == 'md') {
-        this.columnNum = 8
+        this.columnNum = 7
       } else if (change[0].mqAlias == 'lg') {
-        this.columnNum = 12
+        this.columnNum = 10
       } else if (change[0].mqAlias == 'xl') {
-        this.columnNum = 16
+        this.columnNum = 15
       } else {
         this.columnNum = 20
       }

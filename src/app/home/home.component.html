@@ -141,12 +141,12 @@
                 <div fxLayout="column" fxLayoutGap="1em">
                     <div *ngFor="let category of skillTree" fxLayout="column" fxLayoutGap="1em">
                         <div fxLayout="row" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                            <h3>{{category.title}}</h3>
+                            <h2>{{category.title}}</h2>
                         </div>
-                        <mat-grid-list [cols]="columnNum" rowHeight="7em">
+                        <mat-grid-list [cols]="columnNum" rowHeight="9em">
                             <mat-grid-tile *ngFor="let skill of category.skills" class="fadeIntoView">
                                 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0.5em">
-                                    <img [src]="skill.image" class="skill">
+                                    <img [src]="skill.image" class="logo">
                                     <small>{{skill.title}}</small>
                                 </div>
                             </mat-grid-tile>
