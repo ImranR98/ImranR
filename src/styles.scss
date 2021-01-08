@@ -344,11 +344,11 @@ a {
 .fadeIntoView {
   @include invisible(true);
   animation-name: hide;
-  animation-duration: 1s;
+  animation-duration: 0.75s;
   &.show {
     @include invisible(false);
     animation-name: show;
-    animation-duration: 1s;
+    animation-duration: 0.75s;
   }
 }
 
@@ -356,4 +356,10 @@ a {
   border: 0.5em solid mat-color($primary-mat-color, Main);
   border-radius: 100%;
   width: 5em;
+}
+
+.skill {
+  border: 0.5em solid mat-color($primary-mat-color, Main);
+  border-radius: 100%;
+  width: 3em;
 }

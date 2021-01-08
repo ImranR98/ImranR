@@ -18,7 +18,7 @@
         </div>
         <div id="work" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
             <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
                     <h1>Work</h1>
                 </div>
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
@@ -52,7 +52,7 @@
         <mat-divider></mat-divider>
         <div id="studies" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
             <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
                     <h1>Studies</h1>
                 </div>
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
@@ -86,7 +86,7 @@
         <mat-divider></mat-divider>
         <div id="projects" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
             <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
                     <h1>Projects</h1>
                 </div>
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
@@ -135,8 +135,23 @@
         <mat-divider></mat-divider>
         <div id="skills" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
             <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
+                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
                     <h1>Skills</h1>
+                </div>
+                <div fxLayout="column" fxLayoutGap="1em">
+                    <div *ngFor="let category of skillTree" fxLayout="column" fxLayoutGap="1em">
+                        <div fxLayout="row" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
+                            <h3>{{category.title}}</h3>
+                        </div>
+                        <mat-grid-list [cols]="columnNum" rowHeight="7em">
+                            <mat-grid-tile *ngFor="let skill of category.skills" class="fadeIntoView">
+                                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0.5em">
+                                    <img [src]="skill.image" class="skill">
+                                    <small>{{skill.title}}</small>
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
                 </div>
             </div>
         </div>
