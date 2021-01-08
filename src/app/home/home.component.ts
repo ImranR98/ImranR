@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 
 /*
 TODO:
-- Add Social icons in About
 - Integrate # anchor tags if possible
 - Separate sections into components for maintainability
 - Try to organize CSS (for maintainability and to possibly reduce repetition)

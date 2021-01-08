@@ -124,6 +124,16 @@ ul {
     }
   }
 }
+
+.links img {
+  filter: sepia(0%) saturate(0) hue-rotate(315deg);
+  transition: 0.5s ease;
+  &:hover {
+    filter: sepia(100%) saturate(300) hue-rotate(315deg);
+    transition: 0.5s ease;
+  }
+}
+
 .accentedText {
   color: mat-color($accent-mat-color, Main);
 }
@@ -356,4 +366,8 @@ a {
   border: 0.5em solid mat-color($primary-mat-color, Main);
   border-radius: 100%;
   width: 5em;
+}
+
+.width1em {
+  width: 1em !important;
 }
