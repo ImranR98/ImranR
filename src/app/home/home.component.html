@@ -1,183 +1,27 @@
-<div id="about" class="fillHeight" [ngClass]="{ 'fadeIn': imageLoaded, 'hidden': !imageLoaded }">
-    <app-top-bar></app-top-bar>
-    <div fxLayout="column">
-        <div class="about lightBackground" [ngClass.lt-sm]="'centerText'" fxLayout="column" fxLayoutGap="1em"
-            fxLayoutAlign="center center">
-            <div fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" fxFlex="100%">
-                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em" fxLayoutGap.lt-sm="1em"
-                    fxLayoutAlign="center center">
-                    <img alt="Imran Remtulla photo" src="../../assets/images/me.jpg" class="me" (load)="loaded()">
-                    <div fxLayout="column" fxLayoutGap="1em">
-                        <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
-                        <small>I'm {{descriptionString}}<span class="accentedText bold">{{showCaret || overrideShowCaret
-                                ?
-                                '|' :
-                                ''}}</span></small>
-                    </div>
-                </div>
-                <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="center center" class="links">
-                    <a rel="noreferrer" aria-label="Link to my GitHub profile" href="https://github.com/ImranR98"
-                        target="_blank" fxLayout="row" fxLayoutAlign="center end"><img alt="GitHub icon"
-                            src='../../assets/images/github.png' class="width1em"></a>
-                    <a rel="noreferrer" aria-label="Link to my Medium page" href="https://medium.com/@imranr.dev"
-                        target="_blank" fxLayout="row" fxLayoutAlign="center end"><img alt="Medium icon"
-                            src='../../assets/images/medium.png' class="width1em"></a>
-                    <a rel="noreferrer" aria-label="Link to my LinkedIn profile"
-                        href="https://www.linkedin.com/in/iremtulla/" target="_blank" fxLayout="row"
-                        fxLayoutAlign="center end"><img alt="LinkedIn icon" src='../../assets/images/link.png'
-                            class="width1em"></a>
-                    <a aria-label="Link to email me" href="mailto:iremtulla15@gmail.com" fxLayout="row"
-                        fxLayoutAlign="center end"><img alt="Email icon" src='../../assets/images/mail.png'
-                            class="width1em"></a>
-                </div>
+<div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="space-between" class="height100 stdPadding">
+    <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center" fxFlex="100%">
+        <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="end center" fxFlex="60%">
+            <div fxLayout="column" fxLayoutGap="0.3em" fxLayoutAlign="center center">
+                <span class="name">Imran Remtulla</span>
+                <span class="blurb">
+                    Toronto &nbsp;
+                    <img src='../../assets/ca.svg' class="width1em">
+                    &nbsp; | &nbsp;
+                    Computer Science student with a passion for learning and an interest in Web and App development
+                </span>
             </div>
-            <p class="onlyExtended floating">
-                <mat-icon svgIcon="down"></mat-icon>
-            </p>
+            <app-nav [showHomeButton]="true"></app-nav>
         </div>
-        <div id="work" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
-            <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                    <h1>Work</h1>
-                </div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Manulife Financial logo" src="../../assets/images/manulife.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Manulife Financial</h2>
-                                    <p>Visiting Platform Reliability Engineer - Co-op</p>
-                                </div>
-                                <small>September - December 2019</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Seneca College Logo" src="../../assets/images/seneca.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Seneca College</h2>
-                                    <p>Programmer - Co-op</p>
-                                </div>
-                                <small>September - December 2019</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div id="studies" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
-            <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                    <h1>Studies</h1>
-                </div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Ryerson University logo" src="../../assets/images/ryerson.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Ryerson University</h2>
-                                    <p>Computer Science (BSc)</p>
-                                </div>
-                                <small>September 2020 - December 2022</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Seneca College logo" src="../../assets/images/seneca.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Seneca College</h2>
-                                    <p>Computer Programming and Analysis (Ontario College Advanced Diploma)</p>
-                                </div>
-                                <small>September 2017 - December 2020</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div id="projects" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
-            <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                    <h1>Projects</h1>
-                </div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Letter A picture" src="../../assets/images/andika.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Andika</h2>
-                                    <p>Note taking Web app made with Angular, Node.js and PostgreSQL</p>
-                                </div>
-                                <small><a rel="noreferrer" href="https://github.com/ImranR98/andika"
-                                        target="_blank">GitHub</a></small>
-                            </div>
-                        </div>
-                    </div>
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="TinyStock Logo" src="../../assets/images/tinystock.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>TinyStock</h2>
-                                    <p>Minimal stock keeping desktop App built with Angular, Node.js and Electron</p>
-                                </div>
-                                <small><a rel="noreferrer" href="https://github.com/ImranR98/TinyStock"
-                                        target="_blank">GitHub</a></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
-                    <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
-                        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Tuma Logo" src="../../assets/images/tuma.jpg" class="logo">
-                            <div fxLayout="column" fxLayoutGap="0.5em">
-                                <div fxLayout="column">
-                                    <h2>Tuma</h2>
-                                    <p>Upload files to SFTP servers - Made with Flutter</p>
-                                </div>
-                                <small><a rel="noreferrer" href="https://github.com/ImranR98/Tuma"
-                                        target="_blank">GitHub</a></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div id="skills" class="stdPadding" fxLayout="column" fxLayoutGap="1em">
-            <div fxLayout="column" fxLayoutGap="1em">
-                <div fxLayout="column" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                    <h1>Skills</h1>
-                </div>
-                <div fxLayout="column" fxLayoutGap="1em">
-                    <div *ngFor="let category of skillTree" fxLayout="column" fxLayoutGap="1em">
-                        <div fxLayout="row" fxLayoutAlign.lt-sm="center center" class="fadeIntoView">
-                            <h2>{{category.title}}</h2>
-                        </div>
-                        <mat-grid-list [cols]="columnNum" rowHeight="9em">
-                            <mat-grid-tile *ngFor="let skill of category.skills" class="fadeIntoView">
-                                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0.5em">
-                                    <img [alt]="skill.title + ' logo'" [src]="skill.image" class="logo">
-                                    <small>{{skill.title}}</small>
-                                </div>
-                            </mat-grid-tile>
-                        </mat-grid-list>
-                    </div>
-                </div>
-            </div>
+        <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="center center" fxFlex="40%">
+            <a href="https://github.com/ImranR98" target="_blank" fxLayout="row" fxLayoutAlign="center end" class="github"><img
+                    src='../../assets/git.png' class="width1em"></a>
+            <a href="https://medium.com/@imranr.dev" target="_blank" fxLayout="row" fxLayoutAlign="center end" class="medium"><img
+                    src='../../assets/medium.jpg' class="width1em"></a>
+            <a href="https://www.linkedin.com/in/iremtulla/" target="_blank" fxLayout="row"
+                fxLayoutAlign="center end" class="linkedIn"><img src='../../assets/link.png' class="width1em"></a>
+            <a href="mailto:iremtulla15@gmail.com" fxLayout="row" fxLayoutAlign="center end" class="email"><img
+                    src='../../assets/mail.png' class="width1em"></a>
         </div>
     </div>
-</div>
-<div *ngIf="!imageLoaded" class="fillHeight stdPadding" fxLayout="column" fxLayoutAlign="center center">
-    <mat-spinner color="accent"></mat-spinner>
+    <small><a routerLink="/about">About</a></small>
 </div>
