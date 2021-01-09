@@ -1,0 +1,29 @@
+<div #topBar fxLayout="row" fxLayoutGap="1em" class="topBar sticky" fxLayoutAlign="space-between center">
+    <span class="stdPaddingVertical">Imran<span class="accentedText">R</span></span>
+    <div fxLayout="row" fxLayoutGap="2em" fxShow fxHide.lt-sm>
+        <a routerLink="" (click)="navigate($event, 'about')">About</a>
+        <a routerLink="" (click)="navigate($event, 'work')">Work</a>
+        <a routerLink="" (click)="navigate($event, 'studies')">Studies</a>
+        <a routerLink="" (click)="navigate($event, 'projects')">Projects</a>
+        <a routerLink="" (click)="navigate($event, 'skills')">Skills</a>
+    </div>
+    <button mat-icon-button fxHide fxShow.lt-sm (click)="toggleMenu(true)" aria-label="Navigation menu">
+        <mat-icon svgIcon="menu" (click)="toggleMenu(true)"></mat-icon>
+    </button>
+</div>
+<div style="height: 6em;" class="lightBackground"></div>
+
+<div class="menuOverlay stdPadding" fxLayout="column" fxLayoutGap="1em">
+    <div fxLayout="row" fxLayoutAlign="end">
+        <button mat-icon-button (click)="toggleMenu(false)" aria-label="Close navigation menu">
+            <mat-icon svgIcon="close"></mat-icon>
+        </button>
+    </div>
+    <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="center center" class="fillHeight">
+        <a routerLink="" (click)="navigate($event, 'about'); toggleMenu(false)" >About</a>
+        <a routerLink="" (click)="navigate($event, 'work'); toggleMenu(false)" >Work</a>
+        <a routerLink="" (click)="navigate($event, 'studies'); toggleMenu(false)" >Studies</a>
+        <a routerLink="" (click)="navigate($event, 'projects'); toggleMenu(false)" >Projects</a>
+        <a routerLink="" (click)="navigate($event, 'skills'); toggleMenu(false)" >Skills</a>
+    </div>
+</div>
