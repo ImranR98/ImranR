@@ -198,12 +198,6 @@ ul {
   background-color: mat-color($primary-mat-color, Main);
 }
 
-.me {
-  border: 0.5em solid mat-color($primary-mat-color, Dark);
-  border-radius: 100%;
-  width: 10em;
-}
-
 a {
   color: inherit;
 }
@@ -302,17 +296,6 @@ a {
   }
 }
 
-.placeholder {
-  min-height: 15em !important;
-}
-
-:target:before {
-  content: "";
-  display: block;
-  height: 4em;
-  margin: -4em 0 0;
-}
-
 .floating {
   animation-name: floating;
   animation-duration: 3s;
@@ -358,11 +341,23 @@ a {
     @include invisible(true);
   }
 }
-.fadeIntoView,
-.fadeIn {
+
+.fadeIntoView {
   @include invisible(true);
   animation-name: hide;
   animation-duration: 0.75s;
+  &.show {
+    @include invisible(false);
+    animation-name: show;
+    animation-duration: 0.75s;
+  }
+}
+
+.me {
+  border: 0.5em solid mat-color($primary-mat-color, Dark);
+  border-radius: 100%;
+  width: 10em;
+  @include invisible(true);
   &.show {
     @include invisible(false);
     animation-name: show;

@@ -64,6 +64,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.typewriteDescriptions()
     window.addEventListener('scroll', this.scroll, true)
+    setTimeout(() => { // If image doesn't load in 5 seconds, show the outline anyways
+      this.showMe()
+    }, 5000);
+  }
+
+  showMe() {
+    document.getElementsByClassName('me')[0]?.classList.add('show')
   }
 
   ngAfterViewInit() {
