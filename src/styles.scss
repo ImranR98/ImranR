@@ -186,6 +186,10 @@ ul {
   }
 }
 
+.centerText {
+  text-align: center;
+}
+
 .lightBackground {
   background-color: mat-color($primary-mat-color, Main);
 }
@@ -202,6 +206,10 @@ a {
 
 .stdPadding {
   padding: 1em !important;
+}
+
+.doublePaddingRight {
+  padding-right: 2em !important;
 }
 
 .stdPaddingVertical {

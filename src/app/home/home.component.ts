@@ -133,27 +133,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Web',
       skills: [
         {
-          image: '../../assets/images/nodejs.png',
+          image: '../../assets/images/nodejs.jpg',
           title: 'Node.js'
         },
         {
-          image: '../../assets/images/angular.png',
+          image: '../../assets/images/angular.jpg',
           title: 'Angular'
         },
         {
-          image: '../../assets/images/html.png',
+          image: '../../assets/images/html.jpg',
           title: 'HTML'
         },
         {
-          image: '../../assets/images/css.png',
+          image: '../../assets/images/css.jpg',
           title: 'CSS'
         },
         {
-          image: '../../assets/images/javascript.png',
+          image: '../../assets/images/javascript.jpg',
           title: 'JavaScript'
         },
         {
-          image: '../../assets/images/typescript.png',
+          image: '../../assets/images/typescript.jpg',
           title: 'TypeScript'
         }
       ]
@@ -162,7 +162,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Mobile',
       skills: [
         {
-          image: '../../assets/images/flutter.png',
+          image: '../../assets/images/flutter.jpg',
           title: 'Flutter'
         }
       ]
@@ -171,15 +171,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Database',
       skills: [
         {
-          image: '../../assets/images/mongodb.png',
+          image: '../../assets/images/mongodb.jpg',
           title: 'MongoDB'
         },
         {
-          image: '../../assets/images/mysql.png',
+          image: '../../assets/images/mysql.jpg',
           title: 'MySQL'
         },
         {
-          image: '../../assets/images/postgresql.png',
+          image: '../../assets/images/postgresql.jpg',
           title: 'PostgreSQL'
         },
       ]
@@ -188,15 +188,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Tools',
       skills: [
         {
-          image: '../../assets/images/sublime.png',
+          image: '../../assets/images/sublime.jpg',
           title: 'Sublime'
         },
         {
-          image: '../../assets/images/vs.png',
+          image: '../../assets/images/vs.jpg',
           title: 'VS'
         },
         {
-          image: '../../assets/images/vscode.png',
+          image: '../../assets/images/vscode.jpg',
           title: 'VS Code'
         }
       ]
@@ -205,27 +205,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Platforms',
       skills: [
         {
-          image: '../../assets/images/apigee.png',
+          image: '../../assets/images/apigee.jpg',
           title: 'Apigee'
         },
         {
-          image: '../../assets/images/concourse.png',
+          image: '../../assets/images/concourse.jpg',
           title: 'Concourse'
         },
         {
-          image: '../../assets/images/heroku.png',
+          image: '../../assets/images/heroku.jpg',
           title: 'Heroku'
         },
         {
-          image: '../../assets/images/jira.png',
+          image: '../../assets/images/jira.jpg',
           title: 'Jira'
         },
         {
-          image: '../../assets/images/pcf.png',
+          image: '../../assets/images/pcf.jpg',
           title: 'PCF'
         },
         {
-          image: '../../assets/images/servicenow.png',
+          image: '../../assets/images/servicenow.jpg',
           title: 'ServiceNOW'
         }
       ]
@@ -234,27 +234,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Other',
       skills: [
         {
-          image: '../../assets/images/bash.png',
+          image: '../../assets/images/bash.jpg',
           title: 'Bash'
         },
         {
-          image: '../../assets/images/cpp.png',
+          image: '../../assets/images/cpp.jpg',
           title: 'C++'
         },
         {
-          image: '../../assets/images/git.png',
+          image: '../../assets/images/git.jpg',
           title: 'Git'
         },
         {
-          image: '../../assets/images/java.png',
+          image: '../../assets/images/java.jpg',
           title: 'Java'
         },
         {
-          image: '../../assets/images/linux.png',
+          image: '../../assets/images/linux.jpg',
           title: 'Linux'
         },
         {
-          image: '../../assets/images/photoshop.png',
+          image: '../../assets/images/photoshop.jpg',
           title: 'Photoshop'
         }
       ]
