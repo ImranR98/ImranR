@@ -7,7 +7,7 @@
         <a routerLink="" (click)="navigate($event, 'projects')">Projects</a>
         <a routerLink="" (click)="navigate($event, 'skills')">Skills</a>
     </div>
-    <button mat-icon-button fxHide fxShow.lt-sm (click)="toggleMenu(true)">
+    <button mat-icon-button fxHide fxShow.lt-sm (click)="toggleMenu(true)" aria-label="Navigation menu">
         <mat-icon svgIcon="menu" (click)="toggleMenu(true)"></mat-icon>
     </button>
 </div>
@@ -15,7 +15,7 @@
 
 <div class="menuOverlay stdPadding" fxLayout="column" fxLayoutGap="1em">
     <div fxLayout="row" fxLayoutAlign="end">
-        <button mat-icon-button (click)="toggleMenu(false)">
+        <button mat-icon-button (click)="toggleMenu(false)" aria-label="Close navigation menu">
             <mat-icon svgIcon="close"></mat-icon>
         </button>
     </div>
