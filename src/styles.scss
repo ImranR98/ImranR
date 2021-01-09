@@ -125,12 +125,16 @@ ul {
   }
 }
 
-.links img {
+.links a {
+  color: mat-color($accent-mat-color, Light);
   filter: sepia(0%) saturate(0) hue-rotate(315deg);
   transition: 0.5s ease;
   &:hover {
     filter: sepia(100%) saturate(300) hue-rotate(315deg);
     transition: 0.5s ease;
+  }
+  mat-icon {
+    width: 1em !important;
   }
 }
 
@@ -140,9 +144,9 @@ ul {
 
 @mixin aboutExtended($true) {
   @if $true {
-    height: calc(100vh - 4em);
+    min-height: calc(100vh - 4em);
   } @else {
-    height: 25em;
+    min-height: 25em;
   }
 }
 @keyframes aboutScroll {
@@ -242,11 +246,6 @@ a {
 
 .hidden {
   @include hidden(true);
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: 0.2s;
 }
 
 .bold {
@@ -359,7 +358,8 @@ a {
     @include invisible(true);
   }
 }
-.fadeIntoView {
+.fadeIntoView,
+.fadeIn {
   @include invisible(true);
   animation-name: hide;
   animation-duration: 0.75s;

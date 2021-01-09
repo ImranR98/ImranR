@@ -17,8 +17,6 @@ TODO:
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  imageLoaded: boolean = false
-
   descriptionString = ''
   showCaret = false
   overrideShowCaret = false
@@ -64,9 +62,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => { // If X seconds go by w/o image load, show the page anyways
-      if (!this.imageLoaded) this.loaded()
-    }, 5000)
+    this.typewriteDescriptions()
     window.addEventListener('scroll', this.scroll, true)
   }
 
@@ -115,13 +111,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  loaded() {
-    if (!this.imageLoaded) {
-      this.imageLoaded = true
-      this.typewriteDescriptions()
-    }
-  }
-
   descriptions = [
     'a Computer Science Student.',
     'interested in Web and App development.',
@@ -133,27 +122,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Web',
       skills: [
         {
-          image: '../../assets/images/nodejs.jpg',
+          image: '/static/images/nodejs.jpg',
           title: 'Node.js'
         },
         {
-          image: '../../assets/images/angular.jpg',
+          image: '/static/images/angular.jpg',
           title: 'Angular'
         },
         {
-          image: '../../assets/images/html.jpg',
+          image: '/static/images/html.jpg',
           title: 'HTML'
         },
         {
-          image: '../../assets/images/css.jpg',
+          image: '/static/images/css.jpg',
           title: 'CSS'
         },
         {
-          image: '../../assets/images/javascript.jpg',
+          image: '/static/images/javascript.jpg',
           title: 'JavaScript'
         },
         {
-          image: '../../assets/images/typescript.jpg',
+          image: '/static/images/typescript.jpg',
           title: 'TypeScript'
         }
       ]
@@ -162,7 +151,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Mobile',
       skills: [
         {
-          image: '../../assets/images/flutter.jpg',
+          image: '/static/images/flutter.jpg',
           title: 'Flutter'
         }
       ]
@@ -171,15 +160,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Database',
       skills: [
         {
-          image: '../../assets/images/mongodb.jpg',
+          image: '/static/images/mongodb.jpg',
           title: 'MongoDB'
         },
         {
-          image: '../../assets/images/mysql.jpg',
+          image: '/static/images/mysql.jpg',
           title: 'MySQL'
         },
         {
-          image: '../../assets/images/postgresql.jpg',
+          image: '/static/images/postgresql.jpg',
           title: 'PostgreSQL'
         },
       ]
@@ -188,15 +177,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Tools',
       skills: [
         {
-          image: '../../assets/images/sublime.jpg',
+          image: '/static/images/sublime.jpg',
           title: 'Sublime'
         },
         {
-          image: '../../assets/images/vs.jpg',
+          image: '/static/images/vs.jpg',
           title: 'VS'
         },
         {
-          image: '../../assets/images/vscode.jpg',
+          image: '/static/images/vscode.jpg',
           title: 'VS Code'
         }
       ]
@@ -205,27 +194,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Platforms',
       skills: [
         {
-          image: '../../assets/images/apigee.jpg',
+          image: '/static/images/apigee.jpg',
           title: 'Apigee'
         },
         {
-          image: '../../assets/images/concourse.jpg',
+          image: '/static/images/concourse.jpg',
           title: 'Concourse'
         },
         {
-          image: '../../assets/images/heroku.jpg',
+          image: '/static/images/heroku.jpg',
           title: 'Heroku'
         },
         {
-          image: '../../assets/images/jira.jpg',
+          image: '/static/images/jira.jpg',
           title: 'Jira'
         },
         {
-          image: '../../assets/images/pcf.jpg',
+          image: '/static/images/pcf.jpg',
           title: 'PCF'
         },
         {
-          image: '../../assets/images/servicenow.jpg',
+          image: '/static/images/servicenow.jpg',
           title: 'ServiceNOW'
         }
       ]
@@ -234,27 +223,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       title: 'Other',
       skills: [
         {
-          image: '../../assets/images/bash.jpg',
+          image: '/static/images/bash.jpg',
           title: 'Bash'
         },
         {
-          image: '../../assets/images/cpp.jpg',
+          image: '/static/images/cpp.jpg',
           title: 'C++'
         },
         {
-          image: '../../assets/images/git.jpg',
+          image: '/static/images/git.jpg',
           title: 'Git'
         },
         {
-          image: '../../assets/images/java.jpg',
+          image: '/static/images/java.jpg',
           title: 'Java'
         },
         {
-          image: '../../assets/images/linux.jpg',
+          image: '/static/images/linux.jpg',
           title: 'Linux'
         },
         {
-          image: '../../assets/images/photoshop.jpg',
+          image: '/static/images/photoshop.jpg',
           title: 'Photoshop'
         }
       ]

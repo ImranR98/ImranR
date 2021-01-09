@@ -1,4 +1,4 @@
-<div id="about" class="fillHeight" [ngClass]="{ 'fadeIn': imageLoaded, 'hidden': !imageLoaded }">
+<div id="about" class="fillHeight">
     <app-top-bar></app-top-bar>
     <div fxLayout="column">
         <div class="about lightBackground" [ngClass.lt-sm]="'centerText'" fxLayout="column" fxLayoutGap="1em"
@@ -6,7 +6,7 @@
             <div fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" fxFlex="100%">
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em" fxLayoutGap.lt-sm="1em"
                     fxLayoutAlign="center center">
-                    <img alt="Imran Remtulla photo" src="../../assets/images/me.jpg" class="me" (load)="loaded()">
+                    <img alt="Imran Remtulla photo" src="/static/images/me.jpg" class="me">
                     <div fxLayout="column" fxLayoutGap="1em">
                         <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
                         <small>I'm {{descriptionString}}<span class="accentedText bold">{{showCaret || overrideShowCaret
@@ -15,20 +15,23 @@
                                 ''}}</span></small>
                     </div>
                 </div>
-                <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="center center" class="links">
-                    <a rel="noreferrer" aria-label="Link to my GitHub profile" href="https://github.com/ImranR98"
-                        target="_blank" fxLayout="row" fxLayoutAlign="center end"><img alt="GitHub icon"
-                            src='../../assets/images/github.png' class="width1em"></a>
-                    <a rel="noreferrer" aria-label="Link to my Medium page" href="https://medium.com/@imranr.dev"
-                        target="_blank" fxLayout="row" fxLayoutAlign="center end"><img alt="Medium icon"
-                            src='../../assets/images/medium.png' class="width1em"></a>
-                    <a rel="noreferrer" aria-label="Link to my LinkedIn profile"
-                        href="https://www.linkedin.com/in/iremtulla/" target="_blank" fxLayout="row"
-                        fxLayoutAlign="center end"><img alt="LinkedIn icon" src='../../assets/images/link.png'
-                            class="width1em"></a>
-                    <a aria-label="Link to email me" href="mailto:iremtulla15@gmail.com" fxLayout="row"
-                        fxLayoutAlign="center end"><img alt="Email icon" src='../../assets/images/mail.png'
-                            class="width1em"></a>
+                <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="center end" class="links">
+                    <a mat-icon-button aria-label="Link to email me" href="mailto:iremtulla15@gmail.com"
+                        target="_blank">
+                        <mat-icon svgIcon="email"></mat-icon>
+                    </a>
+                    <a mat-icon-button aria-label="My Github profile" href="https://github.com/ImranR98"
+                        target="_blank">
+                        <mat-icon svgIcon="github"></mat-icon>
+                    </a>
+                    <a mat-icon-button aria-label="My LinkedIn profile" href="https://www.linkedin.com/in/iremtulla/"
+                        target="_blank">
+                        <mat-icon svgIcon="linkedin"></mat-icon>
+                    </a>
+                    <a mat-icon-button aria-label="My Medium page" href="https://medium.com/@imranr.dev"
+                        target="_blank">
+                        <mat-icon svgIcon="medium"></mat-icon>
+                    </a>
                 </div>
             </div>
             <p class="onlyExtended floating">
@@ -43,7 +46,7 @@
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Manulife Financial logo" src="../../assets/images/manulife.jpg" class="logo">
+                            <img alt="Manulife Financial logo" src="/static/images/manulife.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Manulife Financial</h2>
@@ -55,7 +58,7 @@
                     </div>
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Seneca College Logo" src="../../assets/images/seneca.jpg" class="logo">
+                            <img alt="Seneca College Logo" src="/static/images/seneca.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Seneca College</h2>
@@ -77,7 +80,7 @@
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Ryerson University logo" src="../../assets/images/ryerson.jpg" class="logo">
+                            <img alt="Ryerson University logo" src="/static/images/ryerson.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Ryerson University</h2>
@@ -89,7 +92,7 @@
                     </div>
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Seneca College logo" src="../../assets/images/seneca.jpg" class="logo">
+                            <img alt="Seneca College logo" src="/static/images/seneca.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Seneca College</h2>
@@ -111,7 +114,7 @@
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Letter A picture" src="../../assets/images/andika.jpg" class="logo">
+                            <img alt="Letter A picture" src="/static/images/andika.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Andika</h2>
@@ -124,7 +127,7 @@
                     </div>
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="TinyStock Logo" src="../../assets/images/tinystock.jpg" class="logo">
+                            <img alt="TinyStock Logo" src="/static/images/tinystock.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>TinyStock</h2>
@@ -139,7 +142,7 @@
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3em" class="stdPadding">
                     <div fxLayout="column" fxLayoutGap="1em" fxFlex="100%">
                         <div fxLayout="row" fxLayoutGap="1em" fxLayoutAlign="default center" class="fadeIntoView">
-                            <img alt="Tuma Logo" src="../../assets/images/tuma.jpg" class="logo">
+                            <img alt="Tuma Logo" src="/static/images/tuma.jpg" class="logo">
                             <div fxLayout="column" fxLayoutGap="0.5em">
                                 <div fxLayout="column">
                                     <h2>Tuma</h2>
@@ -177,7 +180,4 @@
             </div>
         </div>
     </div>
-</div>
-<div *ngIf="!imageLoaded" class="fillHeight stdPadding" fxLayout="column" fxLayoutAlign="center center">
-    <mat-spinner color="accent"></mat-spinner>
 </div>

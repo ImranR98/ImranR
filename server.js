@@ -4,7 +4,7 @@ const app = express()
 const port = process.env.PORT || 8080
 
 app.use(express.static(__dirname + '/dist/ImranR'))
-app.use(express.static(__dirname + '/static'))
+app.use('/static', express.static(__dirname + '/static'))
 
 app.get('/robots.txt', (req, res) => {
     res.sendFile(__dirname + '/static/robots.txt')

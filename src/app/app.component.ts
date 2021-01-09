@@ -32,5 +32,21 @@ export class AppComponent implements OnInit {
       "down",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/down.svg")
     )
+    this.matIconRegistry.addSvgIcon(
+      "github",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/github.svg")
+    )
+    this.matIconRegistry.addSvgIcon(
+      "medium",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/medium.svg")
+    )
+    this.matIconRegistry.addSvgIcon(
+      "linkedin",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/linkedin.svg")
+    )
+    this.matIconRegistry.addSvgIcon(
+      "email",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/icons/email.svg")
+    )
   }
 }

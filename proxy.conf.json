@@ -1,0 +1,9 @@
+{
+  "/static/*": {
+    "target": "http://localhost:8080/static",
+    "secure": false,
+    "pathRewrite": {
+      "^/static": ""
+    }
+  }
+}
