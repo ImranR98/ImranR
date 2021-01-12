@@ -89,13 +89,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   async typewriteDescriptions() {
+    const emojiRegex = new RegExp('^emoji[0-9]*')
     this.caretHeartbeat()
     while (true) {
       for (let i = 0; i < this.descriptions.length; i++) {
         this.descriptionString = ''
         this.overrideShowCaret = true
         for (let j = 0; j < this.descriptions[i].length; j++) {
-          this.descriptionString += this.descriptions[i][j]
+          let isEmoji = false
+          try {
+            const emoji = emojiRegex.exec(this.descriptions[i].slice(j))
+            if (emoji?.length) {
+              let index = Number.parseInt(emoji[0].slice(5))
+              if (this.emojiArray[index]) {
+                this.descriptionString += this.emojiArray[index]
+                j+=5
+                isEmoji = true
+              }
+            }
+          } catch (err) {
+
+          }
+          if (!isEmoji)
+            this.descriptionString += this.descriptions[i][j]
           await this.sleep(Math.random() * 150)
         }
         this.overrideShowCaret = false
@@ -118,10 +134,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  emojiArray = ['🇨🇦']
+
   descriptions = [
-    'a Computer Science Student.',
-    'interested in Web and App development.',
-    'located in Toronto 🇨🇦.'
+    'I\'m a Computer Science Student.',
+    'I\'m interested in Web and App development.',
+    'I\'m located in Toronto emoji0.',
+    'I like getting things done.'
   ]
 
   skillTree = [
