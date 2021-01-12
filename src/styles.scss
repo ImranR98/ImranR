@@ -170,7 +170,7 @@ ul {
   padding-left: 1em;
   padding-right: 1em;
   .onlyExtended {
-    opacity: 100%;
+    opacity: 1;
     transition: 1s ease;
   }
   @include aboutExtended(true);
@@ -181,7 +181,7 @@ ul {
     animation-name: aboutScroll;
     animation-duration: 0.4s;
     .onlyExtended {
-      opacity: 0%;
+      opacity: 0;
       transition: 0.4s ease;
     }
   }
@@ -219,10 +219,10 @@ a {
 @mixin hidden($true) {
   @if $true {
     display: none;
-    opacity: 0%;
+    opacity: 0;
   } @else {
     display: static;
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -316,9 +316,9 @@ a {
 
 @mixin invisible($true) {
   @if $true {
-    opacity: 0%;
+    opacity: 0;
   } @else {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 @keyframes show {

@@ -1,0 +1,17 @@
+<div class="about lightBackground" [ngClass.lt-sm]="'centerText'" fxLayout="column" fxLayoutGap="1em"
+    fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center" fxFlex="100%">
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="3em" fxLayoutGap.lt-sm="1em"
+            fxLayoutAlign="center center">
+            <img alt="Photo of Imran Remtulla" src="/static/images/me.jpg" class="me fadeIn" (load)="showMe()">
+            <div fxLayout="column" fxLayoutGap="1em">
+                <span>Hi <h1>I'm <span class="accentedText">Imran Remtulla</span></h1></span>
+                <app-typewriter></app-typewriter>
+            </div>
+        </div>
+        <app-social-links></app-social-links>
+    </div>
+    <p class="onlyExtended floating">
+        <mat-icon svgIcon="down"></mat-icon>
+    </p>
+</div>

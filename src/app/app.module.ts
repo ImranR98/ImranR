@@ -17,12 +17,26 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { HomeComponent } from './home/home.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { TypewriterComponent } from './typewriter/typewriter.component';
+import { SocialLinksComponent } from './social-links/social-links.component';
+import { AboutComponent } from './about/about.component';
+import { SkillsComponent } from './skills/skills.component';
+import { WorkComponent } from './work/work.component';
+import { StudiesComponent } from './studies/studies.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TopBarComponent
+    TopBarComponent,
+    TypewriterComponent,
+    SocialLinksComponent,
+    AboutComponent,
+    SkillsComponent,
+    WorkComponent,
+    StudiesComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
