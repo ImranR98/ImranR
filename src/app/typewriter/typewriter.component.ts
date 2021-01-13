@@ -13,12 +13,12 @@ export class TypewriterComponent implements OnInit {
   showCaret = false
   overrideShowCaret = false
 
-  emojiArray = ['🇨🇦']
+  supportedEmoji = ['🇨🇦']
 
   descriptions = [
     'I\'m a Computer Science Student.',
     'I\'m interested in Web and App development.',
-    'I\'m located in Toronto emoji0.',
+    'I\'m located in Toronto 🇨🇦.',
   ]
 
   ngOnInit(): void {
@@ -40,37 +40,35 @@ export class TypewriterComponent implements OnInit {
     }
   }
 
+  findSupportedEmojiAtIndex(string: string, targetIndex: number): string | undefined {
+    let isEmojiAtIndex = this.supportedEmoji.map(emoji => string.indexOf(emoji)).find(index => index == targetIndex) != undefined
+    let emoji = undefined
+    if (isEmojiAtIndex) emoji = string.slice(targetIndex, targetIndex + 4)
+    return emoji
+  }
+
   async typewriteDescriptions() {
-    const emojiRegex = new RegExp('^emoji[0-9]*')
     this.caretHeartbeat()
     while (true) {
       for (let i = 0; i < this.descriptions.length; i++) {
         this.descriptionString = ''
         this.overrideShowCaret = true
         for (let j = 0; j < this.descriptions[i].length; j++) {
-          let isEmoji = false
-          try {
-            const emoji = emojiRegex.exec(this.descriptions[i].slice(j))
-            if (emoji?.length) {
-              let index = Number.parseInt(emoji[0].slice(5))
-              if (this.emojiArray[index]) {
-                this.descriptionString += this.emojiArray[index]
-                j+=5
-                isEmoji = true
-              }
-            }
-          } catch (err) {
-
-          }
-          if (!isEmoji)
-            this.descriptionString += this.descriptions[i][j]
+          const possibleEmoji = this.findSupportedEmojiAtIndex(this.descriptions[i], j)
+          if (possibleEmoji) {
+            this.descriptionString += possibleEmoji
+            j += possibleEmoji.length - 1
+          } else this.descriptionString += this.descriptions[i][j]
           await this.sleep(Math.random() * 150)
         }
         this.overrideShowCaret = false
         await this.sleep(3000)
         this.overrideShowCaret = true
         while (this.descriptionString.length > 0) {
-          this.descriptionString = this.descriptionString.slice(0, this.descriptionString.length - 1)
+          const possibleEmoji = this.findSupportedEmojiAtIndex(this.descriptionString, this.descriptionString.length - 4)
+          if (possibleEmoji) {
+            this.descriptionString = this.descriptionString.slice(0, this.descriptionString.length - possibleEmoji.length)
+          } else this.descriptionString = this.descriptionString.slice(0, this.descriptionString.length - 1)
           await this.sleep(20)
         }
         this.descriptionString = ''
