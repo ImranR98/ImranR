@@ -1,0 +1,33 @@
+@keyframes compactAbout {
+    from {
+        min-height: 100vh;
+    }
+    to {
+        min-height: 25rem;
+    }
+}
+
+@keyframes unCompactAbout {
+    from {
+        min-height: 25rem;
+    }
+    to {
+        min-height: 100vh;
+    }
+}
+
+.about {
+    padding: 1rem;
+    background-color: #0f2060;
+    min-height: 100vh;
+    animation-name: unCompactAbout;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.about.compact {
+    min-height: 25rem;
+    animation-name: compactAbout;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
