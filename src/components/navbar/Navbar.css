@@ -21,8 +21,6 @@
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
     position: sticky;
     top: 0;
     padding: 1.5rem 0;
@@ -57,7 +55,7 @@
     transition: 0.2s ease;
 }
 
-.navbar a:hover, .accent {
+.navbar a:hover {
     color: #ff9100;
     transition: 0.2s ease;
 }

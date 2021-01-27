@@ -17,7 +17,8 @@
 }
 
 .about {
-    padding: 1rem;
+    justify-content: center;
+    align-content: center;
     background-color: #0f2060;
     min-height: 100vh;
     animation-name: unCompactAbout;
@@ -30,4 +31,52 @@
     animation-name: compactAbout;
     animation-duration: 0.4s;
     animation-timing-function: ease;
+}
+
+@keyframes raiseContent {
+    from {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+    to {
+        margin-top: 0rem;
+        margin-bottom: 20rem;
+    }
+}
+
+@keyframes dropContent {
+    from {
+        margin-top: 0rem;
+        margin-bottom: 20rem;
+    }
+    to {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+}
+
+.about .inner {
+    margin-top: 0rem;
+    margin-bottom: 20rem;
+    animation-name: raiseContent;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.about.compact .inner {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    animation-name: dropContent;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.me {
+    width: 10em;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 1rem;
+}
+
+.about h1 {
+    font-size: xx-large;
 }

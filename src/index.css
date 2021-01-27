@@ -13,3 +13,26 @@ html {
 .content {
   min-height: 200rem;
 }
+
+.accent {
+  color: #ff9100;
+}
+
+.stdPadding {
+  padding: 1rem;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.centerFlex {
+  align-items: center;
+  justify-items: center;
+}

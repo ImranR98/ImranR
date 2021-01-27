@@ -11,8 +11,14 @@ const About = () => {
     }, [compact])
 
     return (
-        <div className={"about" + (compact ? " compact" : "")}>
-            <h2>About</h2>
+        <div className={"about flexColumn centerFlex stdPadding" + (compact ? " compact" : "")}>
+            <div className="flexRow centerFlex inner">
+                <img alt="Imran Remtulla" src="/images/me.jpg" className="me" />
+                <div className="flexColumn stdPadding">
+                    <p>Hi</p>
+                    <h1>I'm <span className="accent">Imran Remtulla</span></h1>
+                </div>
+            </div>
         </div >
     );
 };
