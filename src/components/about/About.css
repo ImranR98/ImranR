@@ -1,3 +1,4 @@
+/* About Container */
 @keyframes compactAbout {
     from {
         min-height: 100vh;
@@ -33,6 +34,7 @@
     animation-timing-function: ease;
 }
 
+/* About Inner Container */
 @keyframes raiseContent {
     from {
         margin-top: 3rem;
@@ -72,12 +74,6 @@
     animation-timing-function: ease;
 }
 
-.me {
-    width: 10em;
-    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-right: 1rem;
-}
-
 .about h1 {
     font-size: xx-large;
 }
@@ -86,6 +82,14 @@
     margin-top: 1rem;
 }
 
+/* My Picture */
+.me {
+    width: 10rem;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 1rem;
+}
+
+/* Scroll Indicator */
 @keyframes floating {
     0% {
         transform: translate(0, 0px);
@@ -99,9 +103,23 @@
 }
 
 .down {
-    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 2rem;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .about .inner {
+        align-items: center !important;
+        flex-direction: column;
+        text-align: center;
+    }
+    .me {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
 }

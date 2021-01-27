@@ -23,7 +23,7 @@ const About = () => {
                 </div>
             </div>
             <div className="down">
-                <img alt="Scroll down" src={down} className={(compact ? " fadeOut" : "")} />
+                <img alt="Scroll down" src={down} className={(compact ? " fadeOut" : " fadeIn")} />
             </div>
         </div >
     );
