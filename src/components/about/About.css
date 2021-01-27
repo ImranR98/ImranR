@@ -40,14 +40,14 @@
     }
     to {
         margin-top: 0rem;
-        margin-bottom: 20rem;
+        margin-bottom: 10rem;
     }
 }
 
 @keyframes dropContent {
     from {
         margin-top: 0rem;
-        margin-bottom: 20rem;
+        margin-bottom: 10rem;
     }
     to {
         margin-top: 3rem;
@@ -56,8 +56,9 @@
 }
 
 .about .inner {
+    align-items: flex-end;
     margin-top: 0rem;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
     animation-name: raiseContent;
     animation-duration: 0.4s;
     animation-timing-function: ease;
@@ -79,4 +80,28 @@
 
 .about h1 {
     font-size: xx-large;
+}
+
+.typewriter {
+    margin-top: 1rem;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 15px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.down {
+    margin-bottom: 1rem;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
