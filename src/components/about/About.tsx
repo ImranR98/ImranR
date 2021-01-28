@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import me from '../../assets/images/me.jpg'
 import down from '../../assets/icons/down.svg'
+import Typewriter from 'typewriter-effect';
 
 const About = () => {
     const [compact, setCompact] = useState(false)
@@ -19,7 +20,19 @@ const About = () => {
                 <div className="flexColumn stdPadding">
                     <p>Hi</p>
                     <h1>I'm <span className="accent">Imran Remtulla</span></h1>
-                    <p className="typewriter">A Computer Science student.</p>
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter.changeDelay(Math.random() * 150)
+                        }}
+                        options={{
+                            strings: [
+                                'I\'m a Computer Science Student.',
+                                'I\'m interested in Web and App development.',
+                                'I\'m located in Toronto.'
+                            ],
+                            autoStart: true,
+                            loop: true
+                        }} />
                 </div>
             </div>
             <div className="down">

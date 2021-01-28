@@ -68,3 +68,18 @@ html {
   animation-duration: 0.2s;
   animation-timing-function: ease;
 }
+
+.mobileOnly {
+  display: none;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+  .noMobile {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: inherit;
+  }
+}

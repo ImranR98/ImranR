@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <nav className={"navbar flexRow" + (compact ? " compact" : "")}>
             <h1>Imran<span className="accent">R</span></h1>
-            <div className="links">
+            <div className="links noMobile">
                 <a href="#about">About</a>
                 <a href="#about">Work</a>
                 <a href="#about">Study</a>

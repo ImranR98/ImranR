@@ -78,8 +78,13 @@
     font-size: xx-large;
 }
 
-.typewriter {
+.Typewriter {
     margin-top: 1rem;
+    font-size: small;
+}
+
+.Typewriter__cursor {
+    color: #ff9100;
 }
 
 /* My Picture */
