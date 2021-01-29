@@ -1,17 +1,17 @@
 import './Item.css'
 
-const Item = ({ image, title, subtitle, small, className }: { image: string, title: string, subtitle: string, small: string, className: string }) => {
+const Item = ({ image, title, subtitle, children, BG, imageBG }: { image: string, title: string, subtitle: string, children: any, BG: string, imageBG: string }) => {
 
 
     return (
-        <div className={className + " item"}>
-            <div className="logo">
+        <div className="item" style={{ backgroundColor: `#${BG}`}}>
+            <div className="logo" style={{ backgroundColor: `#${imageBG}`}}>
                 <img alt={title} src={image} />
             </div>
             <div className="data stdPadding">
                 <h3>{title}</h3>
                 <p>{subtitle}</p>
-                <small>{small}</small>
+                {children}
             </div>
         </div>
     );
