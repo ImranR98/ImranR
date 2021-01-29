@@ -1,6 +1,42 @@
+@keyframes activate {
+    from {
+        transform: translate(0, 1rem);
+        opacity: 50%;
+    }
+    to {
+        transform: translate(0, 0px);
+        opacity: 100%;
+    }
+}
+
+@keyframes deactivate {
+    from {
+        transform: translate(0, 0px);
+        opacity: 100%;
+    }
+    to {
+        transform: translate(0, 1rem);
+        opacity: 50%;
+    }
+}
+
 .item {
+    transform: translate(0, 0px);
+    opacity: 100%;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
+    animation-name: activate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-play-state: running;
+}
+
+.item.belowScroll {
+    transform: translate(0, 1rem);
+    opacity: 50%;
+    animation-name: deactivate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
 }
 
 .logo {
@@ -12,3 +48,4 @@
 .data {
     text-align: start;
 }
+
