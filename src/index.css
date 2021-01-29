@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+/* Basic Styling */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
 
 * {
   margin: 0;
   font-family: "Manrope";
-  color: #FFF;
+  color: #fff;
 }
 
 html {
   background-color: #000036;
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -18,6 +20,7 @@ html {
   color: #ff9100;
 }
 
+/* Common General Styles */
 .stdPadding {
   padding: 1rem;
 }
@@ -37,21 +40,37 @@ html {
   justify-items: center;
 }
 
+.mobileOnly {
+  display: none;
+}
+
+/* Mobile Adjustments - Common General Styles */
+@media (max-width: 800px) {
+  .noMobile {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: inherit;
+  }
+}
+
+/* Common Animations */
 @keyframes fadeIn {
   from {
-      opacity: 0%;
+    opacity: 0%;
   }
   to {
-      opacity: 100%;
+    opacity: 100%;
   }
 }
 
 @keyframes fadeOut {
   from {
-      opacity: 100%;
+    opacity: 100%;
   }
   to {
-      opacity: 0%;
+    opacity: 0%;
   }
 }
 
@@ -67,19 +86,4 @@ html {
   animation-name: fadeOut;
   animation-duration: 0.2s;
   animation-timing-function: ease;
-}
-
-.mobileOnly {
-  display: none;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 800px) {
-  .noMobile {
-    display: none;
-  }
-
-  .mobileOnly {
-    display: inherit;
-  }
 }

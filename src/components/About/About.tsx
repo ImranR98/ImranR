@@ -14,7 +14,7 @@ const About = () => {
     }, [compact])
 
     return (
-        <div className={"about flexColumn centerFlex stdPadding" + (compact ? " compact" : "")}>
+        <div id="about" className={"about flexColumn centerFlex stdPadding" + (compact ? " compact" : "")}>
             <div className="flexRow centerFlex inner">
                 <img alt="Imran Remtulla" src={me} className="me" />
                 <div className="flexColumn stdPadding">

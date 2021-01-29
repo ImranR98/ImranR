@@ -29,6 +29,7 @@
     animation-duration: 0.2s;
     animation-timing-function: ease;
     background-color: #0f2060;
+    z-index: 100;
 }
 
 .navbar.compact {

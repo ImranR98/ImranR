@@ -15,10 +15,10 @@ const Navbar = () => {
             <h1>Imran<span className="accent">R</span></h1>
             <div className="links noMobile">
                 <a href="#about">About</a>
-                <a href="#about">Work</a>
-                <a href="#about">Study</a>
-                <a href="#about">Projects</a>
-                <a href="#about">Skills</a>
+                <a href="#work">Work</a>
+                <a href="#study">Study</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
             </div>
         </nav >
     );
