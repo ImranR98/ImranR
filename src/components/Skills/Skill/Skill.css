@@ -1,0 +1,40 @@
+@keyframes activate {
+    from {
+        transform: translate(0, 1rem);
+        opacity: 0.5;
+    }
+    to {
+        transform: translate(0, 0px);
+        opacity: 1.0;
+    }
+}
+
+@keyframes deactivate {
+    from {
+        transform: translate(0, 0px);
+        opacity: 1.0;
+    }
+    to {
+        transform: translate(0, 1rem);
+        opacity: 0.5;
+    }
+}
+
+.skill {
+    width: 4rem;
+    transform: translate(0, 0px);
+    opacity: 1.0;
+    animation-name: activate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-play-state: running;
+}
+
+.skill.belowScroll {
+    transform: translate(0, 1rem);
+    opacity: 0.5;
+    animation-name: deactivate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+}
+

@@ -1,0 +1,50 @@
+@keyframes activate {
+    from {
+        transform: translate(0, 1rem);
+        opacity: 0.5;
+    }
+    to {
+        transform: translate(0, 0px);
+        opacity: 1.0;
+    }
+}
+
+@keyframes deactivate {
+    from {
+        transform: translate(0, 0px);
+        opacity: 1.0;
+    }
+    to {
+        transform: translate(0, 1rem);
+        opacity: 0.5;
+    }
+}
+
+.item {
+    transform: translate(0, 0px);
+    opacity: 1.0;
+    display: flex;
+    animation-name: activate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-play-state: running;
+}
+
+.item.belowScroll {
+    transform: translate(0, 1rem);
+    opacity: 0.5;
+    animation-name: deactivate;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+}
+
+.logo {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.data {
+    text-align: start;
+}
+

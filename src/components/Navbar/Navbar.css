@@ -1,0 +1,62 @@
+@keyframes compactNavbar {
+    from {
+        padding: 1.5rem 0;
+        box-shadow: none;
+    }
+    to {
+        padding: 1rem 0;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@keyframes unCompactNavbar {
+    from {
+        padding: 1rem 0;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    to {
+        padding: 1.5rem 0;
+        box-shadow: none;
+    }
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    padding: 1.5rem 0;
+    box-shadow: none;
+    animation-name: unCompactNavbar;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    background-color: #0f2060;
+    z-index: 100;
+}
+
+.navbar.compact {
+    padding: 1rem 0;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: compactNavbar;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+}
+
+.navbar h1 {
+    margin: 0 1rem;
+    font-size: larger;
+}
+
+.navbar .links {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #ff9100;
+    transition: 0.2s ease;
+}

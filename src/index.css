@@ -1,0 +1,94 @@
+/* Basic Styling */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Manrope";
+  color: #fff;
+}
+
+html {
+  background-color: #000036;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+.accent {
+  color: #ff9100;
+}
+
+.icon {
+  max-width: 0.8rem;
+}
+
+/* Common General Styles */
+.stdPadding {
+  padding: 1rem;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.centerFlex {
+  align-items: center;
+  justify-items: center;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.shadow {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Mobile Adjustments - Common General Styles */
+@media (max-width: 800px) {
+  .noMobile {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: inherit;
+  }
+}
+
+/* Common Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  opacity: 1.0;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  animation-name: fadeOut;
+  animation-duration: 0.2s;
+  animation-timing-function: ease;
+}

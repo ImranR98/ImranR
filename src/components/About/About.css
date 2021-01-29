@@ -1,0 +1,152 @@
+/* About Container */
+@keyframes compactAbout {
+    from {
+        min-height: 100vh;
+    }
+    to {
+        min-height: 25rem;
+    }
+}
+
+@keyframes unCompactAbout {
+    from {
+        min-height: 25rem;
+    }
+    to {
+        min-height: 100vh;
+    }
+}
+
+.about {
+    justify-content: center;
+    align-content: center;
+    background-color: #0f2060;
+    min-height: 100vh;
+    animation-name: unCompactAbout;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.about.compact {
+    min-height: 25rem;
+    animation-name: compactAbout;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+/* About Inner Container */
+@keyframes raiseContent {
+    from {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+    to {
+        margin-top: 0rem;
+        margin-bottom: 10rem;
+    }
+}
+
+@keyframes dropContent {
+    from {
+        margin-top: 0rem;
+        margin-bottom: 10rem;
+    }
+    to {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+    }
+}
+
+.about .inner {
+    align-items: flex-end;
+    margin-top: 0rem;
+    margin-bottom: 10rem;
+    animation-name: raiseContent;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.about.compact .inner {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    animation-name: dropContent;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+.about h1 {
+    font-size: xx-large;
+}
+
+.intro {
+    margin-left: 1rem;
+}
+
+.Typewriter {
+    margin-top: 1rem;
+    font-size: small;
+}
+
+.Typewriter__cursor {
+    color: #ff9100;
+}
+
+/* My Picture */
+.me {
+    width: 10rem;
+    margin-right: 1rem;
+}
+
+/* Scroll Indicator */
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 15px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.down {
+    position: absolute;
+    bottom: 2rem;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+/* Contact Links */
+.contact {
+    margin-top: 1.5rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.contact a {
+    margin-right: 2rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .about .inner {
+        align-items: center !important;
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro {
+        margin-left: 0;
+    }
+    .me {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+    .contact a {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
