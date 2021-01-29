@@ -8,6 +8,7 @@ import ryerson from '../../assets/images/ryerson.png'
 import andika from '../../assets/images/andika.png'
 import tinystock from '../../assets/images/tinystock.png'
 import tuma from '../../assets/images/tuma.png'
+import Skills from '../Skills/Skills'
 
 const Home = () => {
     return (
@@ -82,6 +83,9 @@ const Home = () => {
                 >
                     <small><a href="https://github.com/ImranR98/Tuma" target="_blank" rel="noreferrer">GitHub</a></small>
                 </Item>
+            </Section>
+            <Section id="skills" title="Skills">
+                <Skills />
             </Section>
         </nav>
     );
