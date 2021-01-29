@@ -13,7 +13,7 @@ const Item = ({ image, title, subtitle, children, BG, imageBG }: { image: string
     const isReasonablyVisible = (offset: number = 80) => ((elementPosition.y + offset)- Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) <= 0
 
     return (
-        <div ref={elementRef} className={"item" + (!isReasonablyVisible() ? " belowScroll" : "")} style={{ backgroundColor: `#${BG}` }}>
+        <div ref={elementRef} className={"item shadow" + (!isReasonablyVisible() ? " belowScroll" : "")} style={{ backgroundColor: `#${BG}` }}>
             <div className="logo" style={{ backgroundColor: `#${imageBG}` }}>
                 <img alt={title} src={image} />
             </div>

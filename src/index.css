@@ -10,14 +10,15 @@
 html {
   background-color: #000036;
   scroll-behavior: smooth;
-}
-
-.content {
-  min-height: 200rem;
+  scroll-padding-top: 5rem;
 }
 
 .accent {
   color: #ff9100;
+}
+
+.icon {
+  max-width: 0.8rem;
 }
 
 /* Common General Styles */
@@ -44,6 +45,10 @@ html {
   display: none;
 }
 
+.shadow {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 /* Mobile Adjustments - Common General Styles */
 @media (max-width: 800px) {
   .noMobile {
@@ -58,31 +63,31 @@ html {
 /* Common Animations */
 @keyframes fadeIn {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1.0;
   }
 }
 
 @keyframes fadeOut {
   from {
-    opacity: 100%;
+    opacity: 1.0;
   }
   to {
-    opacity: 0%;
+    opacity: 0;
   }
 }
 
 .fadeIn {
-  opacity: 100%;
+  opacity: 1.0;
   animation-name: fadeIn;
   animation-duration: 0.4s;
   animation-timing-function: ease;
 }
 
 .fadeOut {
-  opacity: 0%;
+  opacity: 0;
   animation-name: fadeOut;
   animation-duration: 0.2s;
   animation-timing-function: ease;

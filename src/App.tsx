@@ -1,22 +1,99 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
-import Home from './components/Home/Home'
+import About from './components/About/About'
+import Section from './components/Section/Section'
+import Item from './components/Section/Item/Item'
+import manulife from './assets/images/manulife.png'
+import seneca from './assets/images/seneca.png'
+import ryerson from './assets/images/ryerson.png'
+import andika from './assets/images/andika.png'
+import tinystock from './assets/images/tinystock.png'
+import tuma from './assets/images/tuma.png'
+import Skills from './components/Skills/Skills'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <div className="content">
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
+    <div className="App">
+      <Navbar />
+      <div>
+        <About />
+        <Section id="work" title="—&nbsp;  Work &nbsp;—">
+          <Item
+            image={manulife}
+            title="Manulife Financial"
+            subtitle="Visiting Platform Reliability Engineer - Co-op"
+            BG="0b331b"
+            imageBG="1fa755"
+
+          >
+            <small>September - December 2019</small>
+          </Item>
+          <Item
+            image={seneca}
+            title="Seneca College"
+            subtitle="Programmer - Co-op"
+            BG="470400"
+            imageBG="d60c00"
+          >
+            <small>January - April 2019</small>
+          </Item>
+        </Section>
+        <Section id="study" title="—&nbsp; Study &nbsp;—">
+          <Item
+            image={ryerson}
+            title="Ryerson University"
+            subtitle="Computer Science (BSc)"
+            BG="001a35"
+            imageBG="004c9a"
+          >
+            <small>September 2020 - December 2022</small>
+          </Item>
+          <Item
+            image={seneca}
+            title="Seneca College"
+            subtitle="Computer Programming and Analysis"
+            BG="470400"
+            imageBG="d60c00"
+          >
+            <small>September 2017 - December 2020</small>
+          </Item>
+        </Section>
+        <Section id="projects" title="—&nbsp; Projects &nbsp;—">
+          <Item
+            image={andika}
+            title="Andika"
+            subtitle="Note taking Web App"
+            BG="111111"
+            imageBG="000000"
+          >
+            <small><a href="https://github.com/ImranR98/andika" target="_blank" rel="noreferrer">GitHub</a></small>
+          </Item>
+          <Item
+            image={tinystock}
+            title="TinyStock"
+            subtitle="Minimal stock keeping Electron App"
+            BG="46091d"
+            imageBG="f21e65"
+          >
+            <small><a href="https://github.com/ImranR98/TinyStock" target="_blank" rel="noreferrer">GitHub</a></small>
+          </Item>
+          <Item
+            image={tuma}
+            title="Tuma"
+            subtitle="Flutter App to Upload via SFTP"
+            BG="320d0b"
+            imageBG="f44236"
+          >
+            <small><a href="https://github.com/ImranR98/Tuma" target="_blank" rel="noreferrer">GitHub</a></small>
+          </Item>
+        </Section>
+        <Section id="skills" title="—&nbsp; Skills &nbsp;—">
+          <Skills />
+        </Section>
+        <Footer />
       </div>
-    </Router>
+    </div>
   );
 }
 

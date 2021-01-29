@@ -1,0 +1,11 @@
+.footer {
+    background-color: #0f2060;
+    z-index: 100;
+    margin-top: 4rem;
+    padding: 0.5rem;
+}
+
+.footer a {
+    text-decoration: inherit;
+    font-weight: bold;
+}
