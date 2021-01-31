@@ -38,3 +38,9 @@
     animation-timing-function: ease;
 }
 
+.skill{
+    transition:transform 0.2s ease;
+}
+.skill:hover{
+    transform: translate(0, -0.5rem);
+}
