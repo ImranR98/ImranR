@@ -30,32 +30,32 @@ import photoshop from '../../assets/images/photoshop.jpg'
 const Skills = () => {
     return (
         <div className="skillGrid">
-            <Skill alt="nodejs" image={nodejs}></Skill>
-            <Skill alt="angular" image={angular}></Skill>
-            <Skill alt="react" image={react}></Skill>
-            <Skill alt="html" image={html}></Skill>
-            <Skill alt="css" image={css}></Skill>
-            <Skill alt="javascript" image={javascript}></Skill>
-            <Skill alt="typescript" image={typescript}></Skill>
-            <Skill alt="flutter" image={flutter}></Skill>
-            <Skill alt="mongodb" image={mongodb}></Skill>
-            <Skill alt="mysql" image={mysql}></Skill>
-            <Skill alt="postgresql" image={postgresql}></Skill>
-            <Skill alt="sublime" image={sublime}></Skill>
-            <Skill alt="vs" image={vs}></Skill>
-            <Skill alt="vscode" image={vscode}></Skill>
-            <Skill alt="apigee" image={apigee}></Skill>
-            <Skill alt="concourse" image={concourse}></Skill>
-            <Skill alt="heroku" image={heroku}></Skill>
-            <Skill alt="jira" image={jira}></Skill>
-            <Skill alt="pcf" image={pcf}></Skill>
-            <Skill alt="servicenow" image={servicenow}></Skill>
-            <Skill alt="bash" image={bash}></Skill>
-            <Skill alt="cpp" image={cpp}></Skill>
-            <Skill alt="git" image={git}></Skill>
-            <Skill alt="java" image={java}></Skill>
-            <Skill alt="linux" image={linux}></Skill>
-            <Skill alt="photoshop" image={photoshop}></Skill>
+            <Skill alt="Node.js" image={nodejs}></Skill>
+            <Skill alt="Angular" image={angular}></Skill>
+            <Skill alt="React" image={react}></Skill>
+            <Skill alt="HTML" image={html}></Skill>
+            <Skill alt="CSS" image={css}></Skill>
+            <Skill alt="JavaScript" image={javascript}></Skill>
+            <Skill alt="TypeScript" image={typescript}></Skill>
+            <Skill alt="Flutter" image={flutter}></Skill>
+            <Skill alt="MongoDB" image={mongodb}></Skill>
+            <Skill alt="MySQL" image={mysql}></Skill>
+            <Skill alt="PostgreSQL" image={postgresql}></Skill>
+            <Skill alt="Sublime Text" image={sublime}></Skill>
+            <Skill alt="Microsoft Visual Studio" image={vs}></Skill>
+            <Skill alt="Visual Studio Code" image={vscode}></Skill>
+            <Skill alt="Apigee API Management" image={apigee}></Skill>
+            <Skill alt="Concourse CI" image={concourse}></Skill>
+            <Skill alt="Heroku" image={heroku}></Skill>
+            <Skill alt="Jira" image={jira}></Skill>
+            <Skill alt="Pivotal Cloud Foundry" image={pcf}></Skill>
+            <Skill alt="ServiceNOW" image={servicenow}></Skill>
+            <Skill alt="Bash Scripting" image={bash}></Skill>
+            <Skill alt="C++" image={cpp}></Skill>
+            <Skill alt="Git" image={git}></Skill>
+            <Skill alt="Java" image={java}></Skill>
+            <Skill alt="Linux/UNIX" image={linux}></Skill>
+            <Skill alt="Adobe Photoshop" image={photoshop}></Skill>
         </div>
     );
 };

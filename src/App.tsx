@@ -11,6 +11,8 @@ import tinystock from './assets/images/tinystock.png'
 import tuma from './assets/images/tuma.png'
 import Skills from './components/Skills/Skills'
 import Footer from './components/Footer/Footer'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const App = () => {
   return (
@@ -93,6 +95,17 @@ const App = () => {
         </Section>
         <Footer />
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

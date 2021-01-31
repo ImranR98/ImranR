@@ -25,9 +25,7 @@ const About = () => {
                     <p>Hi</p>
                     <h1>I'm <span className="accent">Imran Remtulla</span></h1>
                     <Typewriter
-                        onInit={(typewriter) => {
-                            typewriter.changeDelay(Math.random() * 150)
-                        }}
+                        onInit={(typewriter) => { }}
                         options={{
                             strings: [
                                 'I\'m a Computer Science Student.',
@@ -35,7 +33,9 @@ const About = () => {
                                 'I\'m located in Toronto.'
                             ],
                             autoStart: true,
-                            loop: true
+                            loop: true,
+                            delay: 100,
+                            deleteSpeed: 15
                         }} />
                     <div className="contact">
                         <a href="mailto:iremtulla15@gmail.com" target="_blank" rel="noreferrer"><img alt="Email" src={email} className="icon"></img></a>
