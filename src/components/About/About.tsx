@@ -28,9 +28,11 @@ const About = () => {
                         onInit={(typewriter) => { }}
                         options={{
                             strings: [
-                                'I\'m a Computer Science Student.',
-                                'I\'m interested in Web and App development.',
-                                'I\'m located in Toronto.'
+                                'Comp. Sci. Student with a \nPassion for Learning',
+                                'Logical and efficient problem solver',
+                                'Perfectionist who priorities UX',
+                                'Responsible, Reliable, and Adaptable',
+                                'Big fan of Open-Source Software'
                             ],
                             autoStart: true,
                             loop: true,

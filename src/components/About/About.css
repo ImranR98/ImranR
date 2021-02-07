@@ -20,7 +20,6 @@
 .about {
     justify-content: center;
     align-content: center;
-    background-color: #0f2060;
     min-height: 100vh;
     animation-name: unCompactAbout;
     animation-duration: 0.4s;

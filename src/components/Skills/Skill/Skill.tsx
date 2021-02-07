@@ -21,7 +21,7 @@ const Skill = ({ image, alt }: { image: string, alt: string }) => {
         ({ currPos }) => setElementPosition(currPos), [], elementRef as any
     )
 
-    const isReasonablyVisible = (offset: number = 40) => ((elementPosition.y + offset) - Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) <= 0
+    const isReasonablyVisible = (offset: number = 15) => ((elementPosition.y + offset) - Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)) <= 0
 
     return (
         <div onClick={click}>

@@ -1,7 +1,7 @@
 @keyframes activate {
     from {
         transform: translate(0, 1rem);
-        opacity: 0.5;
+        opacity: 0;
     }
     to {
         transform: translate(0, 0px);
@@ -16,11 +16,12 @@
     }
     to {
         transform: translate(0, 1rem);
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 
 .item {
+    border-radius: 5px;
     transform: translate(0, 0px);
     opacity: 1.0;
     display: flex;
@@ -32,7 +33,7 @@
 
 .item.belowScroll {
     transform: translate(0, 1rem);
-    opacity: 0.5;
+    opacity: 0;
     animation-name: deactivate;
     animation-duration: 0.2s;
     animation-timing-function: ease;
@@ -46,5 +47,10 @@
 
 .data {
     text-align: start;
+    padding: 0.5rem 1rem;
+}
+
+.gap {
+    height: 0.5rem;
 }
 

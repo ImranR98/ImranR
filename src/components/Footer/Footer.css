@@ -1,8 +1,8 @@
 .footer {
-    background-color: #0f2060;
     z-index: 100;
-    margin-top: 4rem;
     padding: 0.5rem;
+    background-color: rgb(23, 28, 54);
+    border-top: 1px solid rgb(56, 67, 117);
 }
 
 .footer a {

@@ -1,7 +1,7 @@
 @keyframes activate {
     from {
         transform: translate(0, 1rem);
-        opacity: 0.5;
+        opacity: 0;
     }
     to {
         transform: translate(0, 0px);
@@ -16,7 +16,7 @@
     }
     to {
         transform: translate(0, 1rem);
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 
@@ -32,7 +32,7 @@
 
 .skill.belowScroll {
     transform: translate(0, 1rem);
-    opacity: 0.5;
+    opacity: 0;
     animation-name: deactivate;
     animation-duration: 0.2s;
     animation-timing-function: ease;

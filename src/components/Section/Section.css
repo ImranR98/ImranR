@@ -6,9 +6,9 @@
 
 .section {
     text-align: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 2rem;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid rgb(56, 67, 117);
 }
 
 .section h2 {
