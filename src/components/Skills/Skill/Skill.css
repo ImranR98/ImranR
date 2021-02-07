@@ -25,7 +25,7 @@
     transform: translate(0, 0px);
     opacity: 1.0;
     animation-name: activate;
-    animation-duration: 0.2s;
+    animation-duration: 0.4s;
     animation-timing-function: ease;
     animation-play-state: running;
 }
@@ -34,7 +34,7 @@
     transform: translate(0, 1rem);
     opacity: 0;
     animation-name: deactivate;
-    animation-duration: 0.2s;
+    animation-duration: 0.4s;
     animation-timing-function: ease;
 }
 
