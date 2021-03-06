@@ -1,8 +1,7 @@
 .footer {
-    z-index: 100;
+    z-index: 45;
     padding: 0.5rem;
-    background-color: rgb(23, 28, 54);
-    border-top: 1px solid rgb(56, 67, 117);
+    background-color: rgb(7, 9, 17);
 }
 
 .footer a {

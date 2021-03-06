@@ -31,7 +31,7 @@ const About = () => {
     }, 5000)
 
     return (
-        <div id="about" className={"about flexColumn centerFlex stdPadding" + (compact ? " compact" : "")}>
+        <div id="about" className={"about flexColumn centerFlex stdPadding shadow2" + (compact ? " compact" : "")}>
             <div className="flexRow centerFlex inner">
                 <img alt="Imran Remtulla" src={me} className="me shadow" />
                 <div className="flexColumn intro">
@@ -39,7 +39,7 @@ const About = () => {
                     <h1>I'm <span className="accent">Imran Remtulla</span></h1>
 
                     <WindupChildren>
-                        <div className="typewriter"><Pace ms={50}>{strings[activeString]}</Pace></div>
+                        <div className="typewriter"><Pace ms={50}>{strings[activeString]}&nbsp;</Pace></div>
                     </WindupChildren>
                     <div className="contact">
                         <a href="mailto:iremtulla15@gmail.com" target="_blank" rel="noreferrer"><img alt="Email" src={email} className="icon"></img></a>

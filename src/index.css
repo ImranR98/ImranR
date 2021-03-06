@@ -10,7 +10,7 @@ html {
   background-color: rgb(212, 219, 255);
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
-  background-color: rgb(15, 18, 32);
+  background-color: rgb(29, 35, 68);
   color: #FFF;
 }
 
@@ -63,18 +63,26 @@ a {
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.shadow2 {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
 /* Section Backgrounds */
 .work {
   background-color: rgb(23, 28, 54);
+  z-index: 49;
 }
 .study {
   background-color: rgb(19, 23, 44);
+  z-index: 48;
 }
 .projects {
   background-color: rgb(15, 19, 36);
+  z-index: 47;
 }
 .skills {
   background-color: rgb(12, 15, 29);
+  z-index: 46;
 }
 
 /* Mobile Adjustments - Common General Styles */
