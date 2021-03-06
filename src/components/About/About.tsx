@@ -18,11 +18,11 @@ const About = () => {
     }, [compact])
 
     const strings = [
-        'Comp. Sci. Student with a \nPassion for Learning',
+        'Comp. Sci. Student with a passion for Learning',
+        'Big fan of Open-Source Software',
         'Logical and efficient problem solver',
         'Perfectionist who priorities UX',
-        'Responsible, Reliable, and Adaptable',
-        'Big fan of Open-Source Software'
+        'Responsible, Reliable, and Adaptable'
     ]
     const [activeString, setActiveString] = useState(0)
 

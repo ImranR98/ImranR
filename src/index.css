@@ -67,8 +67,14 @@ a {
 .work {
   background-color: rgb(23, 28, 54);
 }
+.study {
+  background-color: rgb(19, 23, 44);
+}
 .projects {
-  background-color: rgb(23, 28, 54);
+  background-color: rgb(15, 19, 36);
+}
+.skills {
+  background-color: rgb(12, 15, 29);
 }
 
 /* Mobile Adjustments - Common General Styles */
