@@ -81,13 +81,9 @@
     margin-left: 1rem;
 }
 
-.Typewriter {
+.typewriter {
     margin-top: 1rem;
     font-size: small;
-}
-
-.Typewriter__cursor {
-    color: #ff9100;
 }
 
 /* My Picture */
