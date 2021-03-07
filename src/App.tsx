@@ -20,7 +20,7 @@ const App = () => {
       <Navbar />
       <div>
         <About />
-        <Section id="work" title=" Work" className="work">
+        <Section id="work" title=" Work" className="work col2">
           <Item
             image={manulife}
             title="Manulife Financial"
@@ -38,7 +38,7 @@ const App = () => {
             <small>January - April 2019</small>
           </Item>
         </Section>
-        <Section id="study" title="Study" className="study">
+        <Section id="study" title="Study" className="study col3">
           <Item
             image={ryerson}
             title="Ryerson University"
@@ -56,7 +56,7 @@ const App = () => {
             <small>September 2017 - December 2020</small>
           </Item>
         </Section>
-        <Section id="projects" title="Projects" className="projects">
+        <Section id="projects" title="Projects" className="projects col4">
           <Item
             image={snapspace}
             title="SnapSpace"
@@ -84,7 +84,7 @@ const App = () => {
             <a href="https://play.google.com/store/apps/details?id=dev.imranr.tuma" target="_blank" rel="noreferrer">Live</a></small>
           </Item>
         </Section>
-        <Section id="skills" title="Skills" className="skills">
+        <Section id="skills" title="Skills" className="skills col5">
           <Skills />
         </Section>
         <Footer />
