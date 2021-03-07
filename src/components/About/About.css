@@ -110,12 +110,11 @@
 
 .down {
     position: absolute;
-    bottom: 2rem;
+    bottom: 10rem;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    z-index: 60;
 }
 
 
