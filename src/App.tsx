@@ -63,7 +63,9 @@ const App = () => {
             subtitle="Online photo sharing platform"
             imageBG="4458c0"
           >
-            <small><a href="https://github.com/ImranR98/SnapSpace" target="_blank" rel="noreferrer">Source</a></small>
+            <small><a href="https://github.com/ImranR98/SnapSpace" target="_blank" rel="noreferrer">Source</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://snapspace.imranr.dev/" target="_blank" rel="noreferrer">Live</a></small>
           </Item>
           <Item
             image={tinystock}
