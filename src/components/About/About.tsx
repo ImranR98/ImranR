@@ -37,10 +37,11 @@ const About = () => {
                 <div className="flexColumn intro">
                     <p>Hi</p>
                     <h1>I'm <span className="accent">Imran Remtulla</span></h1>
-
-                    <WindupChildren>
-                        <div className="typewriter"><Pace ms={50}>{strings[activeString]}&nbsp;</Pace></div>
-                    </WindupChildren>
+                    <div className="typewriter">
+                        <WindupChildren>
+                            <Pace ms={50}>{strings[activeString]}&nbsp;</Pace>
+                        </WindupChildren>
+                    </div>
                     <div className="contact">
                         <a href="mailto:iremtulla15@gmail.com" target="_blank" rel="noreferrer"><img alt="Email" src={email} className="icon"></img></a>
                         <a href="https://github.com/ImranR98" target="_blank" rel="noreferrer"><img alt="GitHub" src={github} className="icon"></img></a>
