@@ -2,10 +2,12 @@
     from {
         padding: 1.5rem 0;
         box-shadow: none;
+        background-color: rgb(29, 35, 68);
     }
     to {
         padding: 1rem 0;
         box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: rgb(40, 47, 94);
     }
 }
 
@@ -13,10 +15,12 @@
     from {
         padding: 1rem 0;
         box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: rgb(40, 47, 94);
     }
     to {
         padding: 1.5rem 0;
         box-shadow: none;
+        background-color: rgb(29, 35, 68);
     }
 }
 
@@ -29,6 +33,7 @@
     animation-duration: 0.2s;
     animation-timing-function: ease;
     z-index: 100;
+    background-color: rgb(29, 35, 68);
 }
 
 .navbar.compact {
@@ -37,6 +42,7 @@
     animation-name: compactNavbar;
     animation-duration: 0.2s;
     animation-timing-function: ease;
+    background-color: rgb(40, 47, 94);
 }
 
 .navbar h1 {

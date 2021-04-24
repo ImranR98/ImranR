@@ -18,17 +18,15 @@ const About = () => {
     }, [compact])
 
     const strings = [
-        'Comp. Sci. Student with a passion for Learning',
-        'Big fan of Open-Source Software',
-        'Logical and efficient problem solver',
-        'Perfectionist who priorities UX',
-        'Responsible, Reliable, and Adaptable'
+        'Ryerson University Computer Science Student',
+        'Open-Source Software Enthusiast',
+        'Perfectionist'
     ]
     const [activeString, setActiveString] = useState(0)
 
     setTimeout(() => {
         activeString === strings.length - 1 ? setActiveString(0) : setActiveString(activeString + 1)
-    }, 5000)
+    }, 7000)
 
     return (
         <div id="about" className={"about flexColumn centerFlex stdPadding shadow2 col1" + (compact ? " compact" : "")}>

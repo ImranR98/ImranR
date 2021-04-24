@@ -6,4 +6,5 @@
 .footer a {
     text-decoration: inherit;
     font-weight: bold;
+    border-bottom: 1px solid white !important;
 }
