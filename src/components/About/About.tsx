@@ -20,7 +20,9 @@ const About = () => {
     const strings = [
         'Ryerson University Computer Science Student',
         'Open-Source Software Enthusiast',
-        'Perfectionist'
+        'Perfectionist',
+        'Currently Interested in Learning Unit Testing',
+        'Currently Interested in Learning Socket Comms.'
     ]
     const [activeString, setActiveString] = useState(0)
 
