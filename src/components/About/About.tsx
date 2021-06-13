@@ -46,7 +46,6 @@ const About = () => {
                         <a href="mailto:iremtulla15@gmail.com" target="_blank" rel="noreferrer"><img alt="Email" src={email} className="icon"></img></a>
                         <a href="https://github.com/ImranR98" target="_blank" rel="noreferrer"><img alt="GitHub" src={github} className="icon"></img></a>
                         <a href="https://linkedin.com/in/iremtulla" target="_blank" rel="noreferrer"><img alt="LinkedIn" src={linkedin} className="icon"></img></a>
-                        <a href="https://medium.com/@imranr.dev" target="_blank" rel="noreferrer"><img alt="Medium" src={medium} className="icon"></img></a>
                     </div>
                 </div>
             </div>
