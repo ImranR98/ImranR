@@ -50,7 +50,7 @@ const About = () => {
                 <img alt="Scroll down" src={down} className={(compact ? " fadeOut" : " fadeIn")} />
             </div>
         </div >
-    );
-};
+    )
+}
 
 export default About;
