@@ -7,7 +7,6 @@ import { Pace, WindupChildren } from 'windups'
 import email from '../../assets/icons/email.svg'
 import github from '../../assets/icons/github.svg'
 import linkedin from '../../assets/icons/linkedin.svg'
-import medium from '../../assets/icons/medium.svg'
 
 const About = () => {
     const [compact, setCompact] = useState(false)
@@ -20,9 +19,7 @@ const About = () => {
     const strings = [
         'Ryerson University Computer Science Student',
         'Open-Source Software Enthusiast',
-        'Perfectionist',
-        'Currently Interested in Learning Unit Testing',
-        'Currently Interested in Learning Socket Comms.'
+        'Perfectionist'
     ]
     const [activeString, setActiveString] = useState(0)
 
